@@ -1,0 +1,49 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 1.2rem;
+}
+
+.pageContent { /*The body */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+main { /*Main content section of each page*/
+  margin-bottom: auto;
+  margin-top: 25px;
+}
+
+/*Homepage Styles*/
+.pgHome { /*Home main*/
+  margin-bottom: unset;
+  margin-top: unset; /*Home doesn't need the same margin adjustments as the other pages*/
+}
+
+.homeCTA {
+  text-align: center;
+  justify-content: space-between;
+}
+
+.ctaLink {
+  margin: 10px 0;
+}
+
+.homeCTA span a {
+  display: inline-block;
+  text-decoration: none;
+  padding: 5px;
+  border: 2px solid black;
+  width: 200px;
+}
+
+/*About/Resume page styles*/
+.workItemSkills > ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+/*# sourceMappingURL=styles.css.map */
