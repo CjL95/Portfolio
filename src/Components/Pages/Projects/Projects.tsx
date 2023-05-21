@@ -1,5 +1,7 @@
 import React from 'react';
 
-export const Projects = () => {
-    
+export const Projects = ():JSX.Element => {
+    return(
+        <main className="container pgProjects"></main>
+    );
 };
