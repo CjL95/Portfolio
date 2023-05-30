@@ -68,11 +68,15 @@ export const Projects = ():JSX.Element => {
             toggled: false
         },
         {
+            name: "Flask",
+            toggled: false
+        },
+        {
             name: "Git",
             toggled: false
         },
         {
-            name: "HandlebarsJS",
+            name: "Handlebars",
             toggled: false
         },
         {
@@ -147,17 +151,20 @@ export const Projects = ():JSX.Element => {
     };
 
     return(
-        <main className="container pgProjects">
-            <section className="row projectFilter">
-                <div className="col-12">
+        <main className="container pgProjects pgMain">
+            <section className="row projectFilterSidebar">
+                <div className="col-12 projectFilter">
                     {
                         skills.map((skill: any, index: any):JSX.Element => {
                             return(
-                                <button key={index} className={skill.toggled ? "btn btn-dark" : "btn btn-outline-dark"} id={skill.name} onClick={btnToggle}>{skill.name}</button>
+                                <button key={index} className={skill.toggled ? "btn btn-light col-6 col-sm-3 col-lg-2 px-0 filterButton" : "btn btn-outline-light col-6 col-sm-3 col-lg-2 px-0 filterButton"} id={skill.name} onClick={btnToggle}>{skill.name}</button>
                             );
                         })
                     }
-                    <button className="btn btn-danger" onClick={clearFilters}>Clear Filters</button>
+                    
+                </div>
+                <div className="col-12">
+                    <button className="btn btn-danger col-6 col-sm-3 col-lg-2 px-0 my-3" onClick={clearFilters}>Clear Filters</button>
                 </div>
             </section>
             <section className="row projectList">

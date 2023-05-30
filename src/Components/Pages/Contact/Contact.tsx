@@ -16,10 +16,10 @@ export const Contact = ():JSX.Element => {
     }
 
     return(
-        <main className="container pgContact">
+        <main className="container pgContact pgMain">
             <section className="row">
                 <article className="col-12 contactIntro">
-                    <h2>Let's get to work!</h2>
+                    <h1 className="bigTitle">Let's get to work!</h1>
                     <p className="flavorText">
                         I'm always looking for new opportunities to learn and grow. Reach out to me if you're interested in working together!
                     </p>
