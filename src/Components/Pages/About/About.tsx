@@ -68,7 +68,7 @@ export const About = ():JSX.Element => {
         ]);
     }, []);
     return(
-        <main className="container pgAbout">
+        <main className="container pgAbout pgMain">
             <section className="row">
                 <h2>Skills</h2>
                 {

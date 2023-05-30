@@ -1,30 +1,89 @@
-<<<<<<< Updated upstream
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-size: 1.2rem;
+  color: white;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  box-sizing: border-box;
 }
 
-.pageContent { /*The body */
+body {
+  background-image: url("http://localhost:3000/inc/img/bg-stars.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.pageContent { /*The react root wrapper */
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: saturate(180%) blur(15px);
 }
 
-main { /*Main content section of each page*/
+main {
   margin-bottom: auto;
   margin-top: 25px;
 }
 
+footer ul li i {
+  font-size: 2rem;
+}
+
+section {
+  margin: 50px auto;
+}
+
+h1, h2, h3 {
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 400;
+}
+
+.pgMain {
+  padding: 30px;
+  border-radius: 10px;
+}
+
+/*Cross-page styles*/
+.topNav {
+  height: 75px;
+}
+
+.navLink {
+  box-shadow: 0 2px 0 0 rgba(1, 122, 208, 0);
+  transition: box-shadow 0.2s ease-in-out;
+}
+
+.navLink:hover {
+  box-shadow: 0 2px 0 0 #017ad0;
+}
+
+.bigTitle {
+  font-size: 5rem;
+  margin-bottom: 40px;
+}
+
+.flavorText {
+  display: block;
+  margin-bottom: 40px;
+}
+
 /*Homepage Styles*/
-.pgHome { /*Home main*/
+.pgHome {
   margin-bottom: unset;
   margin-top: unset; /*Home doesn't need the same margin adjustments as the other pages*/
 }
 
+.flavorText, .softEngi {
+  font-size: 2.4rem;
+}
+
 .homeCTA {
+  min-height: 300px;
   text-align: center;
   justify-content: space-between;
 }
@@ -32,22 +91,49 @@ main { /*Main content section of each page*/
 .ctaLink {
   margin: 10px 0;
 }
+.ctaLink a {
+  color: white;
+  font-size: 1.5rem;
+}
 
 .homeCTA span a {
   display: inline-block;
   text-decoration: none;
   padding: 5px;
-  border: 2px solid black;
   width: 200px;
 }
 
 /*About/Resume page styles*/
-.workItemSkills > ul {
+.workItemSkills ul {
   list-style-type: none;
   padding: 0;
 }
-=======
 
->>>>>>> Stashed changes
+/*Projects page styles*/
+/*.projectFilter{
+    display: flex;
+    flex-wrap: wrap;
+}
+.filterButton{
+    width: 120px;
+}*/
+/*Contact page styles*/
+/*animations*/
+/*@keyframes underlineFadeout {
+        from{
+            box-shadow: 0 2px 0 0 rgba($color: #017ad0, $alpha: 1);
+        }
+        to{
+            box-shadow: 0 2px 0 0 rgba($color: #017ad0, $alpha: 0);
+        }
+}
+@keyframes underlineFadeIn {
+    from{
+        box-shadow: 0 2px 0 0 rgba($color: #017ad0, $alpha: 0);
+    }
+    to{
+        box-shadow: 0 2px 0 0 rgba($color: #017ad0, $alpha: 1);
+    }
+}*/
 
 /*# sourceMappingURL=styles.css.map */
