@@ -10,7 +10,7 @@
 }
 
 body {
-  background-image: url("http://localhost:3000/inc/img/bg-stars.png");
+  background-image: url("http://localhost:3000/inc/img/bg-mist.png");
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
@@ -35,7 +35,7 @@ footer ul li i {
 }
 
 section {
-  margin: 50px auto;
+  margin: 80px auto;
 }
 
 h1, h2, h3 {
@@ -50,7 +50,7 @@ h1, h2, h3 {
 
 /*Cross-page styles*/
 .topNav {
-  height: 75px;
+  min-height: 75px;
 }
 
 .navLink {
@@ -70,6 +70,12 @@ h1, h2, h3 {
 .flavorText {
   display: block;
   margin-bottom: 40px;
+}
+
+.skillIcon {
+  font-size: 3rem;
+  margin-right: 10px;
+  margin-bottom: 10px;
 }
 
 /*Homepage Styles*/
@@ -96,6 +102,10 @@ h1, h2, h3 {
   font-size: 1.5rem;
 }
 
+.homeLinks {
+  margin-top: 50px;
+}
+
 .homeCTA span a {
   display: inline-block;
   text-decoration: none;
@@ -109,30 +119,82 @@ h1, h2, h3 {
   padding: 0;
 }
 
+.allSkills {
+  overflow: hidden;
+  transition: height 0.5s ease-in-out;
+  height: 0;
+}
+
+.showThis {
+  height: 100%;
+}
+
+.hideThis {
+  height: 0;
+}
+
 /*Projects page styles*/
-/*.projectFilter{
-    display: flex;
-    flex-wrap: wrap;
+.projectText {
+  display: flex;
+  flex-direction: column;
 }
-.filterButton{
-    width: 120px;
-}*/
+
 /*Contact page styles*/
-/*animations*/
-/*@keyframes underlineFadeout {
-        from{
-            box-shadow: 0 2px 0 0 rgba($color: #017ad0, $alpha: 1);
-        }
-        to{
-            box-shadow: 0 2px 0 0 rgba($color: #017ad0, $alpha: 0);
-        }
+.contactForm {
+  padding: 20px;
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0);
+  backdrop-filter: saturate(180%) blur(15px);
 }
-@keyframes underlineFadeIn {
+
+.contactForm input, .contactForm textarea {
+  background: none;
+  color: white;
+}
+
+.contactForm input::placeholder, .contactForm textarea::placeholder {
+  color: white;
+  font-style: italic;
+}
+
+.formRow fieldset {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.formRow fieldset label {
+  margin-bottom: 5px;
+}
+
+.formRow input:active, .formRow textarea:active,
+.formRow input:focus, .formRow textarea:focus {
+  background: none;
+  border: 1px solid white;
+  color: white;
+}
+
+.req::after {
+  content: "*";
+  color: rgb(255, 255, 255);
+  display: inline-block;
+  margin-left: 5px;
+  font-size: 1.3rem;
+}
+
+/*animations*/
+/*@keyframes makeLarge{
     from{
-        box-shadow: 0 2px 0 0 rgba($color: #017ad0, $alpha: 0);
+        height: 0;
     }
     to{
-        box-shadow: 0 2px 0 0 rgba($color: #017ad0, $alpha: 1);
+        height: auto;
+    }
+}
+@keyframes makeSmall{
+    from{
+        height: auto;
+    }
+    to{
+        height: 0;
     }
 }*/
 
