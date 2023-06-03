@@ -41,100 +41,131 @@ export const Projects = ():JSX.Element => {
     const [skills, setSkills]:any = React.useState([
         {
             name: "Apache",
-            toggled: false
+            toggled: false,
+            icon: "fa-solid fa-server"
         },
         {
             name: "AWS",
-            toggled: false
+            toggled: false,
+            icon: "fa-brands fa-aws"
         },
         {
             name: "Bootstrap",
-            toggled: false           
+            toggled: false,
+            icon: "fa-brands fa-bootstrap"           
         },
         {
             name: "C#",
-            toggled: false
+            toggled: false,
+            icon: "fa-brands fa-microsoft"
+        },
+        {
+            name: "CLI",
+            toggled: false,
+            icon: "fa-solid fa-terminal"
         },
         {
             name: "CSS",
-            toggled: false
+            toggled: false,
+            icon: "fa-brands fa-css3-alt"
         },
         {
             name: "Docker",
-            toggled: false
+            toggled: false,
+            icon: "fa-brands fa-docker"
         },
         {
             name: "ExpressJS",
-            toggled: false
+            toggled: false,
+            icon: "fa-brands fa-node-js"
         },
         {
             name: "Flask",
-            toggled: false
+            toggled: false,
+            icon: "fa-solid fa-flask"
         },
         {
             name: "Git",
-            toggled: false
+            toggled: false,
+            icon: "fa-brands fa-git"
         },
         {
             name: "Handlebars",
-            toggled: false
+            toggled: false,
+            icon: "fa-solid fa-gears"
         },
         {
             name: "HTML",
-            toggled: false
+            toggled: false,
+            icon: "fa-brands fa-html5"
         },
         {
             name: "JavaScript",
-            toggled: false
+            toggled: false,
+            icon: "fa-brands fa-square-js"
         },
         {
             name: "MongoDB",
-            toggled: false
+            toggled: false,
+            icon: "fa-solid fa-leaf"
         },
         {
             name: "MySQL",
-            toggled: false
+            toggled: false,
+            icon: "fa-solid fa-database"
         },
         {
             name: "NodeJS",
-            toggled: false
+            toggled: false,
+            icon: "fa-brands fa-node-js"
         },
         {
             name: "PassportJS",
-            toggled: false
+            toggled: false,
+            icon: "fa-solid fa-key"
         },
         {
             name: "PHP",
-            toggled: false
+            toggled: false,
+            icon: "fa-brands fa-php"
         },
         {
             name: "Python",
+            toggled: false,
+            icon: "fa-brands fa-python"
         },
         {
             name: "ReactJS",
-            toggled: false
+            toggled: false,
+            icon: "fa-brands fa-react"
         },
         {
-            name: "SCSS",
-            toggled: false
+            name: "Sass",
+            toggled: false,
+            icon: "fa-brands fa-sass"
         },
         {
             name: "TypeScript",
-            toggled: false
+            toggled: false,
+            icon: "fa-brands fa-react"
         },
         {
             name: "WAMP",
-            toggled: false
+            toggled: false,
+            icon: "fa-solid fa-server"
         },
         {
             name: "WordPress",
-            toggled: false
+            toggled: false,
+            icon: "fa-brands fa-wordpress"
         }
     ]);
 
-    const btnToggle = (e: any):void => {
+    const btnToggle = (e: any) => {
+        if(!skills)return null;
         const skillChoice = skills.findIndex((i: any)=> i.name === e.target.id);
-        setSkills((prev: Array<{name: string, toggled: boolean}>)=> {
+        setSkills((prev: Array<{name: string, toggled: boolean, icon: string}>)=> {
+            if(!prev[skillChoice]) return [...prev];
             prev[skillChoice].toggled = !prev[skillChoice].toggled;
             return [...prev];
         });
@@ -142,7 +173,6 @@ export const Projects = ():JSX.Element => {
 
     const clearFilters = ():void => {
         let tempSkills = skills;
-        console.log(tempSkills);
         setSkills((prev: any)=>{ 
             tempSkills.forEach((skill: any)=> skill.toggled = false);
             prev = tempSkills; 
@@ -153,18 +183,27 @@ export const Projects = ():JSX.Element => {
     return(
         <main className="container pgProjects pgMain">
             <section className="row projectFilterSidebar">
-                <div className="col-12 projectFilter">
-                    {
-                        skills.map((skill: any, index: any):JSX.Element => {
-                            return(
-                                <button key={index} className={skill.toggled ? "btn btn-light col-6 col-sm-3 col-lg-2 px-0 filterButton" : "btn btn-outline-light col-6 col-sm-3 col-lg-2 px-0 filterButton"} id={skill.name} onClick={btnToggle}>{skill.name}</button>
-                            );
-                        })
-                    }
-                    
-                </div>
-                <div className="col-12">
-                    <button className="btn btn-danger col-6 col-sm-3 col-lg-2 px-0 my-3" onClick={clearFilters}>Clear Filters</button>
+                <div className="col-12 projectFilter"> 
+                    <h2 className="text-center">View Projects By Filter</h2>
+                    <div className="row">
+                        {
+                            skills.map((skill: any, index: any):JSX.Element => {
+                                return(
+                                        <button key={index} className={
+                                            skill.toggled ? 
+                                            "btn btn-light col-6 col-md-3 col-lg-2 px-0 filterButton" : 
+                                            "btn btn-outline-light col-6 col-md-3 col-lg-2 px-0 filterButton"
+                                        } 
+                                        id={skill.name} onClick={btnToggle}>
+                                            <i key={index + 1} className={skill.toggled ? skill.icon + ' text-dark' : skill.icon}></i>  {skill.name}
+                                        </button> 
+                                );
+                            })
+                        }
+                        <button className="btn btn-outline-light col-6 col-md-3 col-lg-2 px-0 my-3" onClick={clearFilters}>
+                            X Clear Filters
+                        </button>
+                    </div>
                 </div>
             </section>
             <section className="row projectList">
