@@ -1,7 +1,6 @@
 import React, { useRef, useState } from 'react';
+import { useForm } from 'react-hook-form';
 import emailjs from 'emailjs-com';
-/*import { PrismaClient } from '@prisma/client';
-const prisma = new PrismaClient();*/
 
 export default function Contact():JSX.Element{
     const areUBot = useRef<HTMLInputElement>(null); //tracks the checkbox for bot filtering
@@ -13,34 +12,29 @@ export default function Contact():JSX.Element{
         phone: "",
         msg: ""
     }); //Tracks the form inputs
+    //const { register, handleSubmit} = useForm(); //Tracks the form submission
     
     const formatPhone = (phoneNum: any) => {
         return phoneNum.replace(/\W/, "").replace(/(\d{3})(\d{3})(\d{4})/, "$1-$2-$3"); //Formats phone number to ###-###-####
     };
 
-    const handleSubmit = (e: any) => { //Handles form submission
-        e.preventDefault(); 
+    const handleSubmit = async (e: any) => { //Handles form submission
         if(areUBot.current?.checked){
         return (alert("Bad request. Please try again."), window.location.reload());//If the bot filter is checked, reload the page
         } 
-        //sendMail(data, e.target);
-        emailjs.sendForm(process.env.NEXT_PUBLIC_REACT_APP_MAIL_SERVICE_ID as string, process.env.NEXT_PUBLIC_REACT_APP_EMAIL_TEMPLATE_ID as string, e.currentTarget, process.env.NEXT_PUBLIC_REACT_APP_EMAIL_USER_ID)
-        .then(async(result) => { //Create a new contact in the database
-            /*await prisma.contact.create({
-                data: {
-                    name: input.name,
-                    org: input.org,
-                    email: input.email,
-                    title: input.title,
-                    phone: input.phone,
-                    message: input.msg
-                }
-            });*/
-            alert("Message sent successfully!");
-        }, (error)=>{
-            console.log(error.text)
-        });
-        e.currentTarget.reset();
+        e.preventDefault(); 
+        try{
+            await fetch('/api/SendContact', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(input)
+            });
+        }catch(e){
+            console.log(e);
+        }
+        sendMail(e.target);
     };
 
     const handleChange = (e: any) => { //Handles form input changes
@@ -52,16 +46,19 @@ export default function Contact():JSX.Element{
         }));
     }
 
-    /*const sendMail = (data: Array<any>, target: any) => { //Sends the email
-        emailjs.sendForm(process.env.REACT_APP_MAIL_SERVICE_ID as string, process.env.REACT_APP_EMAIL_TEMPLATE_ID as string, target, process.env.REACT_APP_EMAIL_USER_ID)
-        .then((result) => {
+    /*const onSubmit = (data: any) => {
+
+    }; //Handles form submission*/
+    const sendMail = (target: any) => { //Sends the email
+        emailjs.sendForm(process.env.NEXT_PUBLIC_REACT_APP_MAIL_SERVICE_ID as string, process.env.NEXT_PUBLIC_REACT_APP_EMAIL_TEMPLATE_ID as string, target, process.env.NEXT_PUBLIC_REACT_APP_EMAIL_USER_ID)
+        .then((result: any) => {
             console.log(result.text);
             alert("Message sent successfully!");
             window.location.reload();
-        }, (error)=>{
+        }, (error: any)=>{
             console.log(error.text)
         })
-    }*/
+    }
 
     return(
         <main className="container pgContact pgMain">
@@ -72,7 +69,7 @@ export default function Contact():JSX.Element{
                         I'm always looking for new opportunities to learn and grow. Reach out to me if you're interested in working together!
                     </p>
                 </article>
-                <form onSubmit={handleSubmit} action="/some-endpoint" className="col-12 col-md-6 contactForm">
+                <form onSubmit={handleSubmit} method="POST" className="col-12 col-md-6 contactForm">
                     <input onChange={handleChange} id="filter" type="checkbox" name="beep_boop" value="areUBot" className="d-none" ref={areUBot}/>
                     <div className="row formRow">
                         <fieldset className="col-12 col-md-6">
