@@ -113,7 +113,7 @@ export default function Contact():JSX.Element{
                     <div className="row">
                         <span><i className="fa-solid fa-envelope"></i> Email: cjl.devv@gmail.com</span>
                         <span><i className="fa-solid fa-phone"></i> Phone: (810) 513-0018</span>
-                        <span><i className="fa-brands fa-discord"></i> Discord: CJ The Dev#5879</span>
+                        <span><i className="fa-brands fa-discord"></i> Discord: CJ The Dev (@cjthedev)</span>
                     </div>
                 </article>
             </section>

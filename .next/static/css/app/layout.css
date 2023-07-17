@@ -66,6 +66,8 @@ h1, h2, h3 {
 .navLink {
   /*box-shadow: 0 2px 0 0 rgba($color: #017ad0, $alpha: 0);
   transition: box-shadow 0.2s ease-in-out;*/
+  width: 160px;
+  text-align: center;
   text-shadow: none;
   transition: text-shadow 0.2s ease-in-out;
 }
@@ -75,6 +77,39 @@ h1, h2, h3 {
   text-shadow: -1px -1px 1px rgba(255, 255, 255, 0.537254902), 1px -1px 3px rgba(255, 255, 255, 0.537254902), -1px 1px 1px rgba(255, 255, 255, 0.537254902), 1px 1px 1px rgba(255, 255, 255, 0.537254902);
 }
 
+/*.navLink i{
+    display: none;
+    transition: display ease-in-out 0.5s;
+}
+.activeLink i{
+    display: inline-block;
+    margin-right: 15px;
+    transition: display ease-in-out 0.5s;
+}*/
+.pageIndicator {
+  position: relative;
+  bottom: 35px;
+  transition: transform 0.2s ease-in-out;
+}
+
+/*page indicator movement*/
+.move0 {
+  transform: translateX(40px);
+}
+
+.move1 {
+  transform: translateX(310px);
+}
+
+.move2 {
+  transform: translateX(580px);
+}
+
+.move3 {
+  transform: translateX(850px);
+}
+
+/*------*/
 .bigTitle {
   font-size: calc(4rem + 1.3vw);
   margin-bottom: 40px;
