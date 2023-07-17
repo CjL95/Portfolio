@@ -1,0 +1,223 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 1.2rem;
+  color: white;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  box-sizing: border-box;
+}
+
+body {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.6)), url("https://portfolio2023bucket.s3.amazonaws.com/bg-mist-resize.webp");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  backdrop-filter: saturate(180%) blur(15px);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  /*background: rgba(0,0,0,0.4);*/
+}
+
+#__next { /*The react root wrapper */
+  /*min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: rgba(0,0,0,0.4);*/
+  /*backdrop-filter: saturate(180%) blur(15px);*/
+}
+
+main {
+  margin-bottom: auto;
+  margin-top: 25px;
+}
+
+footer ul li i {
+  font-size: 2rem;
+}
+
+section {
+  margin: 80px auto;
+}
+
+h1, h2, h3 {
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 400;
+}
+
+.pgMain {
+  padding: 30px;
+  border-radius: 10px;
+}
+
+/*Cross-page styles*/
+.topNav {
+  min-height: 75px;
+}
+
+.navLink {
+  /*box-shadow: 0 2px 0 0 rgba($color: #017ad0, $alpha: 0);
+  transition: box-shadow 0.2s ease-in-out;*/
+  text-shadow: none;
+  transition: text-shadow 0.2s ease-in-out;
+}
+
+.navLink:hover {
+  /*box-shadow: 0 2px 0 0 rgba($color: #017ad0, $alpha: 1);*/
+  text-shadow: -1px -1px 1px rgba(255, 255, 255, 0.537254902), 1px -1px 3px rgba(255, 255, 255, 0.537254902), -1px 1px 1px rgba(255, 255, 255, 0.537254902), 1px 1px 1px rgba(255, 255, 255, 0.537254902);
+}
+
+.bigTitle {
+  font-size: calc(4rem + 1.3vw);
+  margin-bottom: 40px;
+}
+
+.flavorText {
+  display: block;
+  margin-bottom: 40px;
+}
+
+.skillIcon {
+  font-size: 3rem;
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+
+/*Homepage Styles*/
+.pgHome {
+  margin-bottom: unset;
+  margin-top: unset; /*Home doesn't need the same margin adjustments as the other pages*/
+}
+
+.flavorText, .softEngi {
+  font-size: calc(1.5rem + 1.3vw);
+}
+
+.homeCTA {
+  min-height: 300px;
+  text-align: center;
+  justify-content: space-between;
+}
+
+.ctaLink {
+  margin: 10px 0;
+}
+.ctaLink a {
+  color: white;
+  font-size: 1.5rem;
+}
+
+.homeLinks {
+  margin-top: 50px;
+}
+
+.homeCTA span a {
+  display: inline-block;
+  text-decoration: none;
+  padding: 5px;
+  width: 200px;
+}
+
+/*About/Resume page styles*/
+.workItemSkills ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.allSkills {
+  overflow: hidden;
+  transition: height 0.5s ease-in-out;
+  height: 0;
+}
+
+.showThis {
+  height: 100%;
+}
+
+.hideThis {
+  height: 0;
+}
+
+.certRow figure {
+  height: 250px;
+}
+
+/*Projects page styles*/
+.projectText {
+  display: flex;
+  flex-direction: column;
+}
+
+/*Contact page styles*/
+.contactForm {
+  padding: 20px;
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: saturate(180%) blur(15px);
+}
+
+.contactForm input, .contactForm textarea {
+  background: none;
+  color: white;
+}
+
+.contactForm input::placeholder, .contactForm textarea::placeholder {
+  color: white;
+  font-style: italic;
+}
+
+.formRow fieldset {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.formRow fieldset label {
+  margin-bottom: 5px;
+}
+
+.formRow input:active, .formRow textarea:active,
+.formRow input:focus, .formRow textarea:focus {
+  background: none;
+  border: 1px solid white;
+  color: white;
+}
+
+.req::after {
+  content: "*";
+  color: rgb(255, 255, 255);
+  display: inline-block;
+  margin-left: 5px;
+  font-size: 1.3rem;
+}
+
+/*Media Queries*/
+@media (min-width: 992px) {
+  .flavorText, .softEngi {
+    font-size: 2.4rem;
+  }
+  .bigTitle {
+    font-size: 5rem;
+  }
+}
+/*animations*/
+/*@keyframes makeLarge{
+    from{
+        height: 0;
+    }
+    to{
+        height: auto;
+    }
+}
+@keyframes makeSmall{
+    from{
+        height: auto;
+    }
+    to{
+        height: 0;
+    }
+}*/
+
+/*# sourceMappingURL=styles.css.map */

@@ -13,7 +13,9 @@ model Project {
     link        String
     name        String
     description String?
+    contribution String?
     skills      String[]
+    type        String
 }
 
 model Contact {
@@ -29,9 +31,9 @@ model Contact {
 
 model Experience{
     id          String @id @default(auto()) @map("_id") @db.ObjectId
-    image       String
-    link        String
     name        String
-    description String?
+    company     String?
+    description String
+    tenure      String
     skills      String[]
 }
