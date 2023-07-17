@@ -8,23 +8,27 @@ export const Navbar = (props:any):JSX.Element =>{
     const links = [
         {
             path: "/",
-            name: "Home"
+            name: "Home",
+            pos: 0
         },
         {
             path: "/about", 
-            name: "Resume"
+            name: "Resume",
+            pos: 1
         },
         {
             path: "/projects",
-            name: "Projects"
+            name: "Projects",
+            pos: 2
         },
         {
             path: "/contact",
-            name: "Contact Me"
+            name: "Contact Me",
+            pos: 3
         }
     ];
     let url = usePathname();
-    console.log(url);
+    let position = links.findIndex((link) => link.path === url);
     return(
         <nav className="navbar navbar-dark navbar-expand-lg border-bottom topNav">
             <div className="container-fluid">
@@ -36,10 +40,9 @@ export const Navbar = (props:any):JSX.Element =>{
                         {links.map((link, index):JSX.Element =>{
                             return(
                             <li className="nav-item px-5" key={index}>
-                                <Link className={
-                                    url === link.path ? "nav-link text-white navLink activeLink"
-                                    : "nav-link text-white navLink"
-                                    } aria-current="page" href={link.path}>{link.name}</Link>
+                                <Link className="nav-link text-white navLink" aria-current="page" href={link.path}>
+                                {index < 1 ? <i className={"fa-solid fa-caret-down pageIndicator " + ("move" + position)}></i> : ''}
+                                {link.name}</Link>
                             </li>
                             )
                         })}
