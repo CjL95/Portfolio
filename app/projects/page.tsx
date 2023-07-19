@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { ProjectItem } from '../components/Projects/project_item';
+import { motion, AnimatePresence } from 'framer-motion';
 
 export default function Projects():JSX.Element{
     const [projects, setProjects] = React.useState([
@@ -236,41 +237,46 @@ export default function Projects():JSX.Element{
         });
     };
     return(
-        <main className="container pgProjects pgMain">
-            <section className="row projectFilterSidebar">
-                <div className="col-12 projectFilter"> 
-                    <h2 className="text-center">View Projects By Filter</h2>
-                    <div className="row">
-                        {
-                            skills.map((skill: any, index: any):JSX.Element => {
-                                return(
-                                        <button key={index} className={
-                                            skill.toggled ? 
-                                            "btn btn-light col-6 col-md-3 col-lg-2 px-0 filterButton" : 
-                                            "btn btn-outline-light col-6 col-md-3 col-lg-2 px-0 filterButton"
-                                        } 
-                                        id={skill.name} onClick={btnToggle}>
-                                            <i key={index + 1} className={skill.toggled ? skill.icon + ' text-dark' : skill.icon}></i>  {skill.name}
-                                        </button> 
-                                );
-                            })
-                        }
-                        <button className="btn btn-outline-light col-6 col-md-3 col-lg-2 px-0 my-3" onClick={clearFilters}>
-                            X Clear Filters
-                        </button>
+        <AnimatePresence>
+            <motion.main 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}className="container pgProjects pgMain">
+                <section className="row projectFilterSidebar">
+                    <div className="col-12 projectFilter"> 
+                        <h2 className="text-center">View Projects By Filter</h2>
+                        <div className="row">
+                            {
+                                skills.map((skill: any, index: any):JSX.Element => {
+                                    return(
+                                            <button key={index} className={
+                                                skill.toggled ? 
+                                                "btn btn-light col-6 col-md-3 col-lg-2 px-0 filterButton" : 
+                                                "btn btn-outline-light col-6 col-md-3 col-lg-2 px-0 filterButton"
+                                            } 
+                                            id={skill.name} onClick={btnToggle}>
+                                                <i key={index + 1} className={skill.toggled ? skill.icon + ' text-dark' : skill.icon}></i>  {skill.name}
+                                            </button> 
+                                    );
+                                })
+                            }
+                            <button className="btn btn-outline-light col-6 col-md-3 col-lg-2 px-0 my-3" onClick={clearFilters}>
+                                X Clear Filters
+                            </button>
+                        </div>
                     </div>
-                </div>
-            </section>
-            <section className="row projectList">
-                {
-                    projects.map((project: any, index: any):JSX.Element => {
-                        let skillsMatch = skills.filter((skill: any)=> project.skills.includes(skill.name));
-                        let toggledSkills = skills.filter((skill: any)=> skill.toggled);
-                        return toggledSkills.every((i: any)=> skillsMatch.includes(i)) ? <ProjectItem key={index} content={project} /> : 
-                            skills.every((i:any)=>!i.toggled) ? <ProjectItem key={index} content={project} />: <></>;
-                    })
-                }
-            </section>
-        </main>
+                </section>
+                <section className="row projectList">
+                    {
+                        projects.map((project: any, index: any):JSX.Element => {
+                            let skillsMatch = skills.filter((skill: any)=> project.skills.includes(skill.name));
+                            let toggledSkills = skills.filter((skill: any)=> skill.toggled);
+                            return toggledSkills.every((i: any)=> skillsMatch.includes(i)) ? <ProjectItem key={index} content={project} /> : 
+                                skills.every((i:any)=>!i.toggled) ? <ProjectItem key={index} content={project} />: <></>;
+                        })
+                    }
+                </section>
+            </motion.main>
+        </AnimatePresence>
     );
 };

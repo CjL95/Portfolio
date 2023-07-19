@@ -11,7 +11,9 @@ $secondary-font: 'Bebas Neue', sans-serif;
     font-weight: 400;
     box-sizing:border-box;
 }
-
+html{
+    /*scrollbar-gutter: stable;*/
+}
 body{
     background-image: linear-gradient(rgba(0, 0, 0, 0.30), rgba(0, 0, 0, 0.60)), url('https://portfolio2023bucket.s3.amazonaws.com/bg-mist-resize.webp');
     background-repeat: no-repeat;
@@ -22,16 +24,14 @@ body{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    /*background: rgba(0,0,0,0.4);*/
 }
-#__next{  /*The react root wrapper */
-    /*min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    background: rgba(0,0,0,0.4);*/
-    /*backdrop-filter: saturate(180%) blur(15px);*/
-}
+
+/*scrolbar*/
+/*body::-webkit-scrollbar {
+    scrollbar-gutter: stable;
+}*/
+/*-----------*/
+
 main{
     margin-bottom: auto;
     margin-top: 25px;
@@ -62,31 +62,20 @@ h1, h2, h3{
     min-height: 75px;
 }
 .navLink{
-    /*box-shadow: 0 2px 0 0 rgba($color: #017ad0, $alpha: 0);
-    transition: box-shadow 0.2s ease-in-out;*/
     width: 160px;
     text-align:center;
     text-shadow: none;
     transition: text-shadow 0.2s ease-in-out;
 }
 .navLink:hover{
-    /*box-shadow: 0 2px 0 0 rgba($color: #017ad0, $alpha: 1);*/
     text-shadow: -1px -1px 1px #ffffff89, 1px -1px 3px #ffffff89, -1px 1px 1px #ffffff89, 1px 1px 1px #ffffff89;
 }
-/*.navLink i{
-    display: none;
-    transition: display ease-in-out 0.5s;
-}
-.activeLink i{
-    display: inline-block;
-    margin-right: 15px;
-    transition: display ease-in-out 0.5s;
-}*/
 .pageIndicator{
     position: relative;
     bottom: 35px;
-    transition: transform 0.2s ease-in-out;
+    transition: transform 0.3s cubic-bezier(0.68, -0.55, 0.265, 1);
 }
+
 /*page indicator movement*/
 .move0{
     transform: translateX(40px);
@@ -101,6 +90,7 @@ h1, h2, h3{
     transform: translateX(850px);
 }
 /*------*/
+
 .bigTitle{ 
     font-size: calc(4rem + 1.3vw);
     margin-bottom: 40px;
@@ -114,6 +104,7 @@ h1, h2, h3{
     margin-right: 10px;
     margin-bottom: 10px;
 }
+
 /*Homepage Styles*/
 .pgHome{ 
     margin-bottom: unset;
@@ -149,7 +140,6 @@ h1, h2, h3{
 }  
 
 /*About/Resume page styles*/
-
 .workItemSkills {
     ul{
         list-style-type: none;
@@ -177,9 +167,6 @@ h1, h2, h3{
     display: flex;
     flex-direction: column;
 }
-
-
-
 
 /*Contact page styles*/
 .contactForm{
@@ -218,8 +205,28 @@ h1, h2, h3{
     margin-left: 5px;
     font-size: 1.3rem;
 }
-
-
+.contactInfo{
+    h2{
+        font-size: 2rem;
+    }
+}
+.contactLink{
+    width: 250px;
+    font-size: 1.5rem;
+}
+.contactLink{
+    i{
+        font-size: 1.5rem;
+    }
+} 
+.copyIcon{
+    color: rgba(255, 255, 255, 0);
+    transition: color 0.2s ease-in-out;
+}
+.copyIconShow{
+    color: rgba(255, 255, 255, 1);
+    transition: color 0.2s ease-in-out;
+}
 /*Media Queries*/
 @media (min-width: 992px){
     .flavorText, .softEngi{
@@ -229,22 +236,3 @@ h1, h2, h3{
         font-size: 5rem;
     }
 }
-
-
-/*animations*/
-/*@keyframes makeLarge{
-    from{
-        height: 0;
-    }
-    to{
-        height: auto;
-    }
-}
-@keyframes makeSmall{
-    from{
-        height: auto;
-    }
-    to{
-        height: 0;
-    }
-}*/
