@@ -1,6 +1,6 @@
-import { Metadata } from 'next'
-import { Header } from './components/Header/header';
 import React from 'react';
+import { Metadata } from 'next';
+import { Header } from './components/Header/header';
 import { Footer } from './components/Footer/footer';
 import './styles/styles.scss';
 export const metadata: Metadata = {
@@ -35,7 +35,7 @@ export default function RootLayout({
         </head>
         <body>
             <Header/>
-            {children}
+                {children}
             <Footer />
         </body>
       </html>

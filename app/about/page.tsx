@@ -1,6 +1,7 @@
 'use client'
 
 import  React, {useEffect} from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { WorkItem } from '../components/About/work_item';
 import { ListItem } from '../components/Common/list_item';
 export default function About():JSX.Element{  
@@ -234,47 +235,53 @@ export default function About():JSX.Element{
     };
 
     return(
-        <main className="container pgAbout pgMain">
-            <section className="row featSkills">
-                <div className='col-12 mb-3'>
-                    <h2>Featured Skills</h2>
-                </div>
-                {
-                    skills.map((i: any, index: number) => {
-                        return i.featured ? (<ListItem key={index} item={i} colConfig={'col-12 col-md-4 '}/>): null;
-                    })
-                }
-            </section>
-            <section className="row otherSkills">
-                <div className='col-12'>
-                    <button className="btn btn-outline-light mb-3" type="button" onClick={allSkillsViz}>
-                        <h2 className="my-0">All Skills &#10095;</h2>
-                    </button>
-                    <article className={"row allSkills " + (hide ? "hideThis" : "showThis")} id="allSkills">
-                        {
-                            skills.map((i: any, index: number) => {
-                                return (<ListItem key={index} item={i} colConfig={'col-12 col-md-4 '}/>);
-                            })
-                        }
-                    </article>
-                </div>
-            </section>
-            <section className="row my-3">
-                <h2>Experience</h2>
-                { 
-                    exp.map((i: any, index: number) => {  
-                        return(<WorkItem key={index} info={i} skills={skills}/>);
-                    })
-                }
-            </section>
-            <section className="row certRow">
-                <h2>Certifications</h2>
-                {
-                    certs.map((i: any, index: number) => {  
-                        return(<ListItem key={index} item={i} colConfig={'col-12 col-md-6 '}/>);
-                    })
-                }
-            </section>
-        </main>
+        <AnimatePresence>
+            <motion.main 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="container pgAbout pgMain">
+                <section className="row featSkills">
+                    <div className='col-12 mb-3'>
+                        <h2>Featured Skills</h2>
+                    </div>
+                    {
+                        skills.map((i: any, index: number) => {
+                            return i.featured ? (<ListItem key={index} item={i} colConfig={'col-12 col-md-4 '}/>): null;
+                        })
+                    }
+                </section>
+                <section className="row otherSkills">
+                    <div className='col-12'>
+                        <button className="btn btn-outline-light mb-3" type="button" onClick={allSkillsViz}>
+                            <h2 className="my-0">All Skills &#10095;</h2>
+                        </button>
+                        <article className={"row allSkills " + (hide ? "hideThis" : "showThis")} id="allSkills">
+                            {
+                                skills.map((i: any, index: number) => {
+                                    return (<ListItem key={index} item={i} colConfig={'col-12 col-md-4 '}/>);
+                                })
+                            }
+                        </article>
+                    </div>
+                </section>
+                <section className="row my-3">
+                    <h2>Experience</h2>
+                    { 
+                        exp.map((i: any, index: number) => {  
+                            return(<WorkItem key={index} info={i} skills={skills}/>);
+                        })
+                    }
+                </section>
+                <section className="row certRow">
+                    <h2>Certifications</h2>
+                    {
+                        certs.map((i: any, index: number) => {  
+                            return(<ListItem key={index} item={i} colConfig={'col-12 col-md-6 '}/>);
+                        })
+                    }
+                </section>
+            </motion.main>
+        </AnimatePresence>
     );
 };
