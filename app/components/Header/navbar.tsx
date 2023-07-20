@@ -30,14 +30,12 @@ export const Navbar = (props:any):JSX.Element =>{
     let url = usePathname();
     let position: number = links.findIndex((link) => link.path === url);
     
-    /*const setIndicator = ():Array<string> => {
+    /*
+    //from a solution for the indicator involving flex and order
+    const setIndicator = ():Array<string> => { 
         let arr = ['0','1','2','3'];
         return position !== 0 ? arr.splice(position, 1).concat(arr) : arr;
     } */
-    
-    /*useEffect(() => {
-        setIndPos(setIndicator());
-    },[])*/
 
     return(
         <nav className="navbar navbar-dark navbar-expand-lg border-bottom topNav">

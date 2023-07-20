@@ -16,18 +16,22 @@ export default function Contact():JSX.Element{
         phone: "",
         msg: ""
     }); 
-    
+    const [responses, setResponses] = useState(0); //Tracks the number of responses
     const formatPhone = (phoneNum: any) => {
         return phoneNum.replace(/\W/, "").replace(/(\d{3})(\d{3})(\d{4})/, "$1-$2-$3"); //Formats phone number to ###-###-####
     };
 
     const handleSubmit = async (e: any) => { //Handles form submission
-        if(areUBot.current?.checked){
-        return (alert("Bad request. Please try again."), window.location.reload());//If the bot filter is checked, reload the page
-        } 
         e.preventDefault(); 
+        setResponses(prev=> prev + 1);
+        if(areUBot.current?.checked){
+            return (alert("Bad request. Please try again."), e.target.reset());//If the bot filter is checked, reload the page
+        } 
+        if(responses > 2){
+            return (alert("You've sent too many messages. Please wait before sending more."), e.target.reset())
+        }
         try{
-            await fetch('/api/send_contact', {
+            await fetch('./submit', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -48,14 +52,25 @@ export default function Contact():JSX.Element{
             [e.target.id]: e.target.value
         }));
     }
-    const sendMail = (target: any) => { //Sends the email
+    const sendMail = async (target: any) => { //Sends the email
         emailjs.sendForm(process.env.NEXT_PUBLIC_REACT_APP_MAIL_SERVICE_ID as string, process.env.NEXT_PUBLIC_REACT_APP_EMAIL_TEMPLATE_ID as string, target, process.env.NEXT_PUBLIC_REACT_APP_EMAIL_USER_ID)
         .then((result: any) => {
             alert("Message sent successfully!");
-            window.location.reload();
+            target.reset();
         }, (error: any)=>{
             console.log(error.text)
         })
+        /*try{
+            await fetch('/email', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'text/html'
+                },
+                body: t
+            })
+        }catch(err){
+            console.log(err);
+        }*/
     }
 
     const clippy = (e: any) => { //Copies the discord username to the clipboard
