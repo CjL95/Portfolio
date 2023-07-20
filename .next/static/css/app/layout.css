@@ -30,13 +30,9 @@ body {
 }
 
 /*scrolbar*/
-body::-webkit-scrollbar {
-  /*position:absolute;
-  top: 0;
-  right: 0;*/
-  scrollbar-gutter: stable;
-}
-
+/*body::-webkit-scrollbar {
+    scrollbar-gutter: stable;
+}*/
 /*-----------*/
 main {
   margin-bottom: auto;
@@ -66,6 +62,10 @@ h1, h2, h3 {
   min-height: 75px;
 }
 
+.navbarNav {
+  width: 1100px;
+}
+
 .navLink {
   width: 160px;
   text-align: center;
@@ -77,29 +77,64 @@ h1, h2, h3 {
   text-shadow: -1px -1px 1px rgba(255, 255, 255, 0.537254902), 1px -1px 3px rgba(255, 255, 255, 0.537254902), -1px 1px 1px rgba(255, 255, 255, 0.537254902), 1px 1px 1px rgba(255, 255, 255, 0.537254902);
 }
 
-.pageIndicator {
-  position: relative;
-  bottom: 35px;
+/*page indicator using grid*/
+.indicatorTrack {
+  display: flex;
+  /*grid-template-columns: repeat(4, 1fr);
+  grid-template-areas: "indicator . . .";
+  transition: grid-area 0.5s cubic-bezier(0.68, -0.55, 0.265, 1);*/
+  position: absolute;
+  top: 0;
+  margin: auto;
+  width: 1100px;
+  /*transition: 0.5s cubic-bezier(0.68, -0.55, 0.265, 1);*/
+}
+.indicatorTrack div {
+  width: 275px;
+  height: 25px;
+  display: flex;
+  justify-content: flex-start;
+  /*transition: 0.3s cubic-bezier(0.68, -0.55, 0.265, 1);*/
+}
+.indicatorTrack div i {
   transition: transform 0.3s cubic-bezier(0.68, -0.55, 0.265, 1);
 }
 
-/*page indicator movement*/
+/*------------*/
+/*page indicator w/movement*/
+.indicatorFrame {
+  /*grid-area: indicator;
+  transition: order 0.3s */
+}
+
 .move0 {
-  transform: translateX(40px);
+  transform: translateX(131px);
 }
 
 .move1 {
-  transform: translateX(310px);
+  transform: translateX(406px);
 }
 
 .move2 {
-  transform: translateX(580px);
+  transform: translateX(681px);
 }
 
 .move3 {
-  transform: translateX(850px);
+  transform: translateX(956px);
 }
 
+/*.move0{
+    order: 0;
+}
+.move1{
+    order: 1;
+}
+.move2{
+    order: 2;
+}
+.move3{
+    order: 3;
+}*/
 /*------*/
 .bigTitle {
   font-size: calc(4rem + 1.3vw);

@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
@@ -28,7 +28,17 @@ export const Navbar = (props:any):JSX.Element =>{
         }
     ];
     let url = usePathname();
-    let position = links.findIndex((link) => link.path === url);
+    let position: number = links.findIndex((link) => link.path === url);
+    
+    /*const setIndicator = ():Array<string> => {
+        let arr = ['0','1','2','3'];
+        return position !== 0 ? arr.splice(position, 1).concat(arr) : arr;
+    } */
+    
+    /*useEffect(() => {
+        setIndPos(setIndicator());
+    },[])*/
+
     return(
         <nav className="navbar navbar-dark navbar-expand-lg border-bottom topNav">
             <div className="container-fluid">
@@ -36,12 +46,14 @@ export const Navbar = (props:any):JSX.Element =>{
                 <span className="navbar-toggler-icon"></span>
                 </button>
                 <div className="collapse navbar-collapse justify-content-center w-100 mt-3 mt-lg-auto" id="navbarNav">
-                    <ul className="navbar-nav justify-content-center">
+                    <figure className={"indicatorTrack "}>
+                        <div><i className={"fa-solid fa-bookmark pageIndicator " + "move" + position}></i></div>
+                    </figure>
+                    <ul className="navbar-nav navbarNav justify-content-center">
                         {links.map((link, index):JSX.Element =>{
                             return(
-                            <li className="nav-item px-5" key={index}>
+                            <li className="nav-item navItem px-5" key={index}>
                                 <Link className="nav-link text-white navLink" aria-current="page" href={link.path}>
-                                {index < 1 ? <i className={"fa-solid fa-caret-down pageIndicator " + ("move" + position)}></i> : ''}
                                 {link.name}</Link>
                             </li>
                             )
