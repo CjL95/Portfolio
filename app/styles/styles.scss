@@ -36,6 +36,7 @@ main{
     margin-bottom: auto;
     margin-top: 25px;
 }
+
 footer{
     ul{
        li{
@@ -45,13 +46,16 @@ footer{
        }
     }
 }   
+
 section{
     margin: 80px auto;
 }
+
 h1, h2, h3{
     font-family: $secondary-font;
     font-weight: 400;
 }
+
 .pgMain{
     padding: 30px;
     border-radius: 10px;
@@ -61,34 +65,81 @@ h1, h2, h3{
 .topNav{
     min-height: 75px;
 }
+
+.navbarNav{
+    width: 1100px;
+}
+
 .navLink{
     width: 160px;
     text-align:center;
     text-shadow: none;
     transition: text-shadow 0.2s ease-in-out;
 }
+
 .navLink:hover{
     text-shadow: -1px -1px 1px #ffffff89, 1px -1px 3px #ffffff89, -1px 1px 1px #ffffff89, 1px 1px 1px #ffffff89;
 }
-.pageIndicator{
-    position: relative;
-    bottom: 35px;
-    transition: transform 0.3s cubic-bezier(0.68, -0.55, 0.265, 1);
+
+.navItem{
+
+}
+/*page indicator using grid*/
+.indicatorTrack{
+    display: flex;
+    /*grid-template-columns: repeat(4, 1fr);
+    grid-template-areas: "indicator . . .";
+    transition: grid-area 0.5s cubic-bezier(0.68, -0.55, 0.265, 1);*/
+    position: absolute;
+    top: 0;
+    margin: auto;
+    width: 1100px;
+    /*transition: 0.5s cubic-bezier(0.68, -0.55, 0.265, 1);*/
+    
+    div{
+        width: 275px;
+        height: 25px;
+        display: flex;
+        justify-content: flex-start;
+        /*transition: 0.3s cubic-bezier(0.68, -0.55, 0.265, 1);*/
+        i{
+            transition: transform 0.3s cubic-bezier(0.68, -0.55, 0.265, 1);
+        }
+    }
+}
+/*------------*/
+/*page indicator w/movement*/
+.indicatorFrame{
+    /*grid-area: indicator;
+    transition: order 0.3s */
+}
+.move0{
+    transform: translateX(131px);
 }
 
-/*page indicator movement*/
-.move0{
-    transform: translateX(40px);
+.move1{
+    transform: translateX(406px);
+}
+
+.move2{
+    transform: translateX(681px);
+}
+
+.move3{
+    transform: translateX(956px);
+}
+/*.move0{
+    order: 0;
 }
 .move1{
-    transform: translateX(310px);
+    order: 1;
 }
 .move2{
-    transform: translateX(580px);
+    order: 2;
 }
 .move3{
-    transform: translateX(850px);
-}
+    order: 3;
+}*/
 /*------*/
 
 .bigTitle{ 
