@@ -7,7 +7,9 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 export default function Contact():JSX.Element{
     const areUBot = useRef<HTMLInputElement>(null); //tracks the checkbox for bot filtering
+
     const copy: any = useRef({}); //tracks the copy icon
+
     const [input, setInput] = useState({ //Tracks the form inputs
         name: "",
         org: "",
@@ -16,8 +18,10 @@ export default function Contact():JSX.Element{
         phone: "",
         msg: ""
     }); 
+
     const [responses, setResponses] = useState(0); //Tracks the number of responses
-    const formatPhone = (phoneNum: any) => {
+
+    const formatPhone = (phoneNum: any) => {  //Formats the phone number input
         return phoneNum.replace(/\W/, "").replace(/(\d{3})(\d{3})(\d{4})/, "$1-$2-$3"); //Formats phone number to ###-###-####
     };
 
@@ -52,6 +56,7 @@ export default function Contact():JSX.Element{
             [e.target.id]: e.target.value
         }));
     }
+
     const sendMail = async (target: any) => { //Sends the email
         emailjs.sendForm(process.env.NEXT_PUBLIC_REACT_APP_MAIL_SERVICE_ID as string, process.env.NEXT_PUBLIC_REACT_APP_EMAIL_TEMPLATE_ID as string, target, process.env.NEXT_PUBLIC_REACT_APP_EMAIL_USER_ID)
         .then((result: any) => {
@@ -60,20 +65,9 @@ export default function Contact():JSX.Element{
         }, (error: any)=>{
             console.log(error.text)
         })
-        /*try{
-            await fetch('/email', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'text/html'
-                },
-                body: t
-            })
-        }catch(err){
-            console.log(err);
-        }*/
     }
 
-    const clippy = (e: any) => { //Copies the discord username to the clipboard
+    const copyHandler = (e: any) => { //Copies the discord username to the clipboard
         e.preventDefault();
         'clipboard' in navigator ? navigator.clipboard.writeText("cjthedev") : '';
         alert("Copied to clipboard!");
@@ -82,8 +76,8 @@ export default function Contact():JSX.Element{
     const copyHover = () => {//Handles the copy icon hover
         copy.current.classList.add('copyIconShow')
     }
-
-    const copyHide = () =>{
+ 
+    const copyHide = () =>{ //Handles the copy icon mouse leave
         copy.current.classList.remove('copyIconShow')
     }
 
@@ -92,13 +86,15 @@ export default function Contact():JSX.Element{
             <motion.main 
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}className="container pgContact pgMain">
+            exit={{ opacity: 0 }}
+            className="container pgContact pgMain">
                 <section className="row row-gap-3">
                     <article className="col-12 contactIntro">
                         <h1 className="bigTitle">Let's get to work!</h1>
                         <p className="flavorText">
                             I'm always looking for new opportunities to learn and grow. Reach out to me if you're interested in working together!
                         </p>
+                        
                     </article>
                     <form onSubmit={handleSubmit} method="POST" className="col-12 col-md-6 contactForm px-4">
                         <input onChange={handleChange} id="filter" type="checkbox" name="beep_boop" value="areUBot" className="d-none" ref={areUBot}/>
@@ -147,7 +143,7 @@ export default function Contact():JSX.Element{
                             <span className="contactLink"><a className="navLink contactLink text-start nav-link" href="https://www.linkedin.com/in/chris-long-232223206/"><i className="fa-brands fa-linkedin"></i> Chris Long</a></span>
                             <span className="contactLink"><a className="navLink  text-start nav-link" href="https://github.com/CjL95"><i className="fa-brands fa-github"></i> CjL95</a></span>
                             <span id="disc" onMouseEnter={copyHover} onMouseLeave={copyHide} className="contactLink">
-                                <a className="nav-link navLink text-start contactLink" href="#" onClick={clippy}>
+                                <a className="nav-link navLink text-start contactLink" href="#" onClick={copyHandler}>
                                     <i className="fa-brands fa-discord"></i> @cjthedev <i ref={copy} className="fa-solid fa-copy copyIcon"></i>
                                 </a>
                             </span>

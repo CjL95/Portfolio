@@ -4,7 +4,7 @@ const prisma = new PrismaClient();
 
 export async function POST(request: Request) {
     const data = await request.json();
-    console.log(data);
+    //console.log(data);
     try {
         const contact = await prisma.contact.create({
             data: {
