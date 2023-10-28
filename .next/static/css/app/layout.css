@@ -66,11 +66,27 @@ h1, h2, h3 {
   width: 100%;
 }
 
+/*.navNButton{
+    button:focus{
+        box-shadow: 0 0 0!important;
+    }
+}*/
+.hamb {
+  width: 100%;
+  outline: none;
+  background: none;
+  border: none;
+}
+.hamb i {
+  font-size: 2rem;
+}
+
 .navItem {
   /*page indicator using bootstrap display*/
 }
 .navItem .navLink {
   /*width: 160px;*/
+  font-size: 1.6rem;
   text-align: center;
   text-shadow: none;
   transition: all 0.3s ease-in-out;

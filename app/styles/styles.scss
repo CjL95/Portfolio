@@ -69,9 +69,24 @@ h1, h2, h3{
 .navbarNav{
     width: 100%;
 }
+/*.navNButton{
+    button:focus{
+        box-shadow: 0 0 0!important;
+    }
+}*/
+.hamb{
+    width: 100%;
+    outline: none;
+    background: none;
+    border: none;
+    i{
+        font-size: 2rem;
+    }
+}
 .navItem{
    .navLink{
         /*width: 160px;*/
+        font-size: 1.6rem;
         text-align:center;
         text-shadow: none;
         transition: all .3s ease-in-out;
