@@ -67,46 +67,64 @@ h1, h2, h3{
 }
 
 .navbarNav{
-    width: 1100px;
+    width: 100%;
 }
-
-.navLink{
-    width: 160px;
-    text-align:center;
-    text-shadow: none;
-    transition: text-shadow 0.2s ease-in-out;
+/*.navNButton{
+    button:focus{
+        box-shadow: 0 0 0!important;
+    }
+}*/
+.hamb{
+    width: 100%;
+    outline: none;
+    background: none;
+    border: none;
+    i{
+        font-size: 2rem;
+    }
 }
-
-.navLink:hover{
-    text-shadow: -1px -1px 1px #ffffff89, 1px -1px 3px #ffffff89, -1px 1px 1px #ffffff89, 1px 1px 1px #ffffff89;
-}
-
 .navItem{
+   .navLink{
+        /*width: 160px;*/
+        font-size: 1.6rem;
+        text-align:center;
+        text-shadow: none;
+        transition: all .3s ease-in-out;
+        /*transition: text-shadow 0.2s ease-in-out;*/
+    }
 
+    .navLink:hover{
+        text-shadow: -1px -1px 1px #ffffff89, 1px -1px 3px #ffffff89, -1px 1px 1px #ffffff89, 1px 1px 1px #ffffff89;
+    }
+    /*page indicator using bootstrap display*/
+    .navInd{
+        transition: opacity .2s ease-in-out;
+    } 
+    .hide{
+        opacity: 0;
+    }
+}
+.d-none{
+    transition: display .3s ease-in-out;
 }
 /*page indicator using grid*/
-.indicatorTrack{
+/*.indicatorTrack{
     display: flex;
-    /*grid-template-columns: repeat(4, 1fr);
-    grid-template-areas: "indicator . . .";
-    transition: grid-area 0.5s cubic-bezier(0.68, -0.55, 0.265, 1);*/
     position: absolute;
     top: 0;
+    left: 0;
     margin: auto;
-    width: 1100px;
-    /*transition: 0.5s cubic-bezier(0.68, -0.55, 0.265, 1);*/
     
     div{
         width: 275px;
         height: 25px;
         display: flex;
         justify-content: flex-start;
-        /*transition: 0.3s cubic-bezier(0.68, -0.55, 0.265, 1);*/
         i{
             transition: transform 0.3s cubic-bezier(0.68, -0.55, 0.265, 1);
         }
     }
-}
+}*/
 /*------------*/
 /*page indicator w/movement*/
 .indicatorFrame{
@@ -114,19 +132,19 @@ h1, h2, h3{
     transition: order 0.3s */
 }
 .move0{
-    transform: translateX(131px);
+    transform: translateX(131.345px);
 }
 
 .move1{
-    transform: translateX(406px);
+    transform: translateX(406.535px);
 }
 
 .move2{
-    transform: translateX(681px);
+    transform: translateX(681.725px);
 }
 
 .move3{
-    transform: translateX(956px);
+    transform: translateX(956.915px);
 }
 /*.move0{
     order: 0;
@@ -197,16 +215,31 @@ h1, h2, h3{
         padding: 0;
     }
 }
+
 .allSkills{
     overflow: hidden;
-    transition: height 0.5s ease-in-out;
-    height: 0;
+}
+.otherSkills, .allSkills{
+    transition: all 0.5s ease-in-out, height cubic-bezier(0,0,0,1) 0.5s;
+    
 }
 .showThis{
-    height: 100%;
+    height: 1000px;
+    article{
+        opacity: 1;
+        width: 100%;
+    }
+    transition: all 0.5s ease-in-out, height cubic-bezier(0,0,0,1) 0.5s;
+    
 }
 .hideThis{
-    height: 0;
+    height: 70px;
+    article{
+        opacity: 0;
+        width: 0px;
+    }
+    transition: all 0.5s ease-in-out, height cubic-bezier(0,0,0,1) 0.5s;
+    
 }
 
 .certRow figure{
