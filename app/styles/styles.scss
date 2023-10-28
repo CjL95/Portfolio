@@ -215,16 +215,31 @@ h1, h2, h3{
         padding: 0;
     }
 }
+
 .allSkills{
     overflow: hidden;
-    transition: height 0.5s ease-in-out;
-    height: 0;
+}
+.otherSkills, .allSkills{
+    transition: all 0.5s ease-in-out, height cubic-bezier(0,0,0,1) 0.5s;
+    
 }
 .showThis{
-    height: 100%;
+    height: 1000px;
+    article{
+        opacity: 1;
+        width: 100%;
+    }
+    transition: all 0.5s ease-in-out, height cubic-bezier(0,0,0,1) 0.5s;
+    
 }
 .hideThis{
-    height: 0;
+    height: 70px;
+    article{
+        opacity: 0;
+        width: 0px;
+    }
+    transition: all 0.5s ease-in-out, height cubic-bezier(0,0,0,1) 0.5s;
+    
 }
 
 .certRow figure{

@@ -251,12 +251,12 @@ export default function About():JSX.Element{
                         })
                     }
                 </section>
-                <section className="row otherSkills">
+                <section className={"row allSkills " + (hide ? "hideThis" : "showThis")} id="allSkills">
                     <div className='col-12'>
                         <button className="btn btn-outline-light mb-3" type="button" onClick={allSkillsViz}>
                             <h2 className="my-0">All Skills &#10095;</h2>
                         </button>
-                        <article className={"row allSkills " + (hide ? "hideThis" : "showThis")} id="allSkills">
+                        <article className="row allSkills">
                             {
                                 skills.map((i: any, index: number) => {
                                     return (<ListItem key={index} item={i} colConfig={'col-12 col-md-4 '}/>);
