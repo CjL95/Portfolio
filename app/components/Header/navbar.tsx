@@ -41,16 +41,17 @@ export const Navbar = (props:any):JSX.Element =>{
         <nav className="navbar navbar-dark navbar-expand-lg border-bottom topNav">
             <div className="container-fluid">
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span className="navbar-toggler-icon"></span>
+                    <span className="navbar-toggler-icon"></span>
                 </button>
                 <div className="collapse navbar-collapse justify-content-center w-100 mt-3 mt-lg-auto" id="navbarNav">
-                    <figure className={"indicatorTrack "}>
+                    {/*<figure className={"indicatorTrack d-none d-lg-flex"}>
                         <div><i className={"fa-solid fa-bookmark pageIndicator " + "move" + position}></i></div>
-                    </figure>
-                    <ul className="navbar-nav navbarNav justify-content-center">
+                    </figure>*/}
+                    <ul className="navbar-nav navbarNav justify-content-around">
                         {links.map((link, index):JSX.Element =>{
                             return(
-                            <li className="nav-item navItem px-5" key={index}>
+                            <li className="nav-item navItem d-flex justify-content-center align-items-center" key={index}>
+                                <i className={"navInd fa-solid fa-terminal " + (position === index ? "" : "hide")}></i>
                                 <Link className="nav-link text-white navLink" aria-current="page" href={link.path}>
                                 {link.name}</Link>
                             </li>

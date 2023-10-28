@@ -1,0 +1,301 @@
+/*!******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[5].oneOf[13].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[5].oneOf[13].use[3]!./node_modules/next/dist/build/webpack/loaders/resolve-url-loader/index.js??ruleSet[1].rules[5].oneOf[13].use[4]!./node_modules/next/dist/compiled/sass-loader/cjs.js??ruleSet[1].rules[5].oneOf[13].use[5]!./app/styles/styles.scss ***!
+  \******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 1.2rem;
+  color: white;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  box-sizing: border-box;
+}
+
+html {
+  /*scrollbar-gutter: stable;*/
+}
+
+body {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.6)), url("https://portfolio2023bucket.s3.amazonaws.com/bg-mist-resize.webp");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  -webkit-backdrop-filter: saturate(180%) blur(15px);
+          backdrop-filter: saturate(180%) blur(15px);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/*scrolbar*/
+/*body::-webkit-scrollbar {
+    scrollbar-gutter: stable;
+}*/
+/*-----------*/
+main {
+  margin-bottom: auto;
+  margin-top: 25px;
+}
+
+footer ul li i {
+  font-size: 2rem;
+}
+
+section {
+  margin: 80px auto;
+}
+
+h1, h2, h3 {
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 400;
+}
+
+.pgMain {
+  padding: 30px;
+  border-radius: 10px;
+}
+
+/*Cross-page styles*/
+.topNav {
+  min-height: 75px;
+}
+
+.navbarNav {
+  width: 100%;
+}
+
+.navItem {
+  /*page indicator using bootstrap display*/
+}
+.navItem .navLink {
+  /*width: 160px;*/
+  text-align: center;
+  text-shadow: none;
+  transition: all 0.3s ease-in-out;
+  /*transition: text-shadow 0.2s ease-in-out;*/
+}
+.navItem .navLink:hover {
+  text-shadow: -1px -1px 1px rgba(255, 255, 255, 0.537254902), 1px -1px 3px rgba(255, 255, 255, 0.537254902), -1px 1px 1px rgba(255, 255, 255, 0.537254902), 1px 1px 1px rgba(255, 255, 255, 0.537254902);
+}
+.navItem .navInd {
+  transition: opacity 0.2s ease-in-out;
+}
+.navItem .hide {
+  opacity: 0;
+}
+
+.d-none {
+  transition: display 0.3s ease-in-out;
+}
+
+/*page indicator using grid*/
+/*.indicatorTrack{
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: auto;
+
+    div{
+        width: 275px;
+        height: 25px;
+        display: flex;
+        justify-content: flex-start;
+        i{
+            transition: transform 0.3s cubic-bezier(0.68, -0.55, 0.265, 1);
+        }
+    }
+}*/
+/*------------*/
+/*page indicator w/movement*/
+.indicatorFrame {
+  /*grid-area: indicator;
+  transition: order 0.3s */
+}
+
+.move0 {
+  transform: translateX(131.345px);
+}
+
+.move1 {
+  transform: translateX(406.535px);
+}
+
+.move2 {
+  transform: translateX(681.725px);
+}
+
+.move3 {
+  transform: translateX(956.915px);
+}
+
+/*.move0{
+    order: 0;
+}
+.move1{
+    order: 1;
+}
+.move2{
+    order: 2;
+}
+.move3{
+    order: 3;
+}*/
+/*------*/
+.bigTitle {
+  font-size: calc(4rem + 1.3vw);
+  margin-bottom: 40px;
+}
+
+.flavorText {
+  display: block;
+  margin-bottom: 40px;
+}
+
+.skillIcon {
+  font-size: 3rem;
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+
+/*Homepage Styles*/
+.pgHome {
+  margin-bottom: unset;
+  margin-top: unset; /*Home doesn't need the same margin adjustments as the other pages*/
+}
+
+.flavorText, .softEngi {
+  font-size: calc(1.5rem + 1.3vw);
+}
+
+.homeCTA {
+  min-height: 300px;
+  text-align: center;
+  justify-content: space-between;
+}
+
+.ctaLink {
+  margin: 10px 0;
+}
+.ctaLink a {
+  color: white;
+  font-size: 1.5rem;
+}
+
+.homeLinks {
+  margin-top: 50px;
+}
+
+.homeCTA span a {
+  display: inline-block;
+  text-decoration: none;
+  padding: 5px;
+  width: 200px;
+}
+
+/*About/Resume page styles*/
+.workItemSkills ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.allSkills {
+  overflow: hidden;
+  transition: height 0.5s ease-in-out;
+  height: 0;
+}
+
+.showThis {
+  height: 100%;
+}
+
+.hideThis {
+  height: 0;
+}
+
+.certRow figure {
+  height: 250px;
+}
+
+/*Projects page styles*/
+.projectText {
+  display: flex;
+  flex-direction: column;
+}
+
+/*Contact page styles*/
+.contactForm {
+  padding: 20px;
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.5);
+  -webkit-backdrop-filter: saturate(180%) blur(15px);
+          backdrop-filter: saturate(180%) blur(15px);
+}
+
+.contactForm input, .contactForm textarea {
+  background: none;
+  color: white;
+}
+
+.contactForm input::placeholder, .contactForm textarea::placeholder {
+  color: white;
+  font-style: italic;
+}
+
+.formRow fieldset {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.formRow fieldset label {
+  margin-bottom: 5px;
+}
+
+.formRow input:active, .formRow textarea:active,
+.formRow input:focus, .formRow textarea:focus {
+  background: none;
+  border: 1px solid white;
+  color: white;
+}
+
+.req::after {
+  content: "*";
+  color: rgb(255, 255, 255);
+  display: inline-block;
+  margin-left: 5px;
+  font-size: 1.3rem;
+}
+
+.contactInfo h2 {
+  font-size: 2rem;
+}
+
+.contactLink {
+  width: 250px;
+  font-size: 1.5rem;
+}
+
+.contactLink i {
+  font-size: 1.5rem;
+}
+
+.copyIcon {
+  color: rgba(255, 255, 255, 0);
+  transition: color 0.2s ease-in-out;
+}
+
+.copyIconShow {
+  color: rgb(255, 255, 255);
+  transition: color 0.2s ease-in-out;
+}
+
+/*Media Queries*/
+@media (min-width: 992px) {
+  .flavorText, .softEngi {
+    font-size: 2.4rem;
+  }
+  .bigTitle {
+    font-size: 5rem;
+  }
+}
