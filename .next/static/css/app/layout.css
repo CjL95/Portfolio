@@ -218,16 +218,22 @@ h1, h2, h3 {
 }
 
 .allSkills {
-  overflow: hidden;
+  overflow: scroll;
+  overflow-x: hidden;
+}
+
+.allSkills::-webkit-scrollbar {
+  color: white;
+  background: none;
 }
 
 .otherSkills, .allSkills {
-  transition: all 0.5s ease-in-out, height cubic-bezier(0, 0, 0, 1) 0.5s;
+  transition: all cubic-bezier(0, 0, 0, 1) 0.5s;
 }
 
 .showThis {
   height: 1000px;
-  transition: all 0.5s ease-in-out, height cubic-bezier(0, 0, 0, 1) 0.5s;
+  transition: all cubic-bezier(0, 0, 0, 1) 0.5s;
 }
 .showThis article {
   opacity: 1;
@@ -236,7 +242,7 @@ h1, h2, h3 {
 
 .hideThis {
   height: 70px;
-  transition: all 0.5s ease-in-out, height cubic-bezier(0, 0, 0, 1) 0.5s;
+  transition: all cubic-bezier(0, 0, 0, 1) 0.5s;
 }
 .hideThis article {
   opacity: 0;
