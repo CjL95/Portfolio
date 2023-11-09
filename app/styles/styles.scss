@@ -217,10 +217,15 @@ h1, h2, h3{
 }
 
 .allSkills{
-    overflow: hidden;
+    overflow: scroll;
+    overflow-x: hidden;
+}
+.allSkills::-webkit-scrollbar{
+    color: white;
+    background: none;
 }
 .otherSkills, .allSkills{
-    transition: all 0.5s ease-in-out, height cubic-bezier(0,0,0,1) 0.5s;
+    transition: all cubic-bezier(0,0,0,1) 0.5s;
     
 }
 .showThis{
@@ -229,7 +234,7 @@ h1, h2, h3{
         opacity: 1;
         width: 100%;
     }
-    transition: all 0.5s ease-in-out, height cubic-bezier(0,0,0,1) 0.5s;
+    transition: all cubic-bezier(0,0,0,1) 0.5s;
     
 }
 .hideThis{
@@ -238,7 +243,7 @@ h1, h2, h3{
         opacity: 0;
         width: 0px;
     }
-    transition: all 0.5s ease-in-out, height cubic-bezier(0,0,0,1) 0.5s;
+    transition: all cubic-bezier(0,0,0,1) 0.5s;
     
 }
 
