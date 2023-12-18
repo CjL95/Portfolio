@@ -1,0 +1,43 @@
+/*!********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[5].oneOf[9].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[5].oneOf[9].use[3]!./node_modules/next/dist/build/webpack/loaders/resolve-url-loader/index.js??ruleSet[1].rules[5].oneOf[9].use[4]!./node_modules/next/dist/compiled/sass-loader/cjs.js??ruleSet[1].rules[5].oneOf[9].use[5]!./app/styles/about/aboutStyles.module.scss ***!
+  \********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+.aboutStyles_workItemSkills__QicPl ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.aboutStyles_allSkills__1LHA0 {
+  overflow: scroll;
+  overflow-x: hidden;
+}
+
+.aboutStyles_allSkills__1LHA0::-webkit-scrollbar {
+  color: white;
+  background: none;
+}
+
+.aboutStyles_otherSkills__7I9WO, .aboutStyles_allSkills__1LHA0 {
+  transition: all cubic-bezier(0, 0, 0, 1) 0.5s;
+}
+
+.aboutStyles_showThis__fGrEz {
+  height: 1000px;
+  transition: all cubic-bezier(0, 0, 0, 1) 0.5s;
+}
+.aboutStyles_showThis__fGrEz article {
+  opacity: 1;
+  width: 100%;
+}
+
+.aboutStyles_hideThis__4rQ4C {
+  height: 70px;
+  transition: all cubic-bezier(0, 0, 0, 1) 0.5s;
+}
+.aboutStyles_hideThis__4rQ4C article {
+  opacity: 0;
+  width: 0px;
+}
+
+.aboutStyles_certRow__Debw6 figure {
+  height: 250px;
+}

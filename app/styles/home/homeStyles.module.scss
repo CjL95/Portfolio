@@ -1,0 +1,44 @@
+.pgHome{ 
+    margin-bottom: unset;
+    margin-top: unset;   /*Home doesn't need the same margin adjustments as the other pages*/
+}
+.flavorText, .softEngi{
+    font-size: calc(1.5rem + 1.3vw);
+    @media (min-width: 992px){
+        font-size: 2.4rem;
+    }
+}
+.homeCTA{
+    min-height: 300px;
+    text-align: center;
+    justify-content: space-between;
+}
+.ctaLink{
+    margin: 10px 0;
+    a{
+        color: white;
+        font-size: 1.5rem;
+    }
+}
+.homeLinks{
+    margin-top: 50px;
+}
+.homeCTA{
+    span{
+        a{
+            display: inline-block;
+            text-decoration: none;
+            padding: 5px;
+            width: 200px;
+        }
+    }
+}  
+.navLink{
+    font-size: 1.6rem;
+    text-align:center;
+    text-shadow: none;
+    transition: text-shadow .3s ease-in-out;
+    &:hover{
+        text-shadow: -1px -1px 1px #ffffff89, 1px -1px 3px #ffffff89, -1px 1px 1px #ffffff89, 1px 1px 1px #ffffff89;
+    }
+}

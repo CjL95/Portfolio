@@ -1,6 +1,6 @@
 $main-font: 'Montserrat', sans-serif;
 $secondary-font: 'Bebas Neue', sans-serif;
-
+/*Cross-page styles*/
 *{
     margin: 0;
     padding: 0;
@@ -10,9 +10,6 @@ $secondary-font: 'Bebas Neue', sans-serif;
     font-family: $main-font;
     font-weight: 400;
     box-sizing:border-box;
-}
-html{
-    /*scrollbar-gutter: stable;*/
 }
 body{
     background-image: linear-gradient(rgba(0, 0, 0, 0.30), rgba(0, 0, 0, 0.60)), url('https://portfolio2023bucket.s3.amazonaws.com/bg-mist-resize.webp');
@@ -25,18 +22,10 @@ body{
     flex-direction: column;
     justify-content: space-between;
 }
-
-/*scrolbar*/
-/*body::-webkit-scrollbar {
-    scrollbar-gutter: stable;
-}*/
-/*-----------*/
-
 main{
     margin-bottom: auto;
     margin-top: 25px;
 }
-
 footer{
     ul{
        li{
@@ -55,113 +44,17 @@ h1, h2, h3{
     font-family: $secondary-font;
     font-weight: 400;
 }
-
+    /*general body styles*/
 .pgMain{
     padding: 30px;
     border-radius: 10px;
 }
-
-/*Cross-page styles*/
-.topNav{
-    min-height: 75px;
-}
-
-.navbarNav{
-    width: 100%;
-}
-/*.navNButton{
-    button:focus{
-        box-shadow: 0 0 0!important;
-    }
-}*/
-.hamb{
-    width: 100%;
-    outline: none;
-    background: none;
-    border: none;
-    i{
-        font-size: 2rem;
-    }
-}
-.navItem{
-    .hide{
-        opacity: 0;
-    }
-}
-.navLink{
-    /*width: 160px;*/
-    font-size: 1.6rem;
-    text-align:center;
-    text-shadow: none;
-    transition: text-shadow .3s ease-in-out;
-    /*transition: text-shadow 0.2s ease-in-out;*/
-    &:hover{
-        text-shadow: -1px -1px 1px #ffffff89, 1px -1px 3px #ffffff89, -1px 1px 1px #ffffff89, 1px 1px 1px #ffffff89;
-    }
-}
-/*page indicator using bootstrap display*/
-.navInd{
-    transition: opacity .2s ease-in-out;
-} 
-.d-none{
-    transition: display .3s ease-in-out;
-}
-/*page indicator using grid*/
-/*.indicatorTrack{
-    display: flex;
-    position: absolute;
-    top: 0;
-    left: 0;
-    margin: auto;
-    
-    div{
-        width: 275px;
-        height: 25px;
-        display: flex;
-        justify-content: flex-start;
-        i{
-            transition: transform 0.3s cubic-bezier(0.68, -0.55, 0.265, 1);
-        }
-    }
-}*/
-/*------------*/
-/*page indicator w/movement*/
-.indicatorFrame{
-    /*grid-area: indicator;
-    transition: order 0.3s */
-}
-.move0{
-    transform: translateX(131.345px);
-}
-
-.move1{
-    transform: translateX(406.535px);
-}
-
-.move2{
-    transform: translateX(681.725px);
-}
-
-.move3{
-    transform: translateX(956.915px);
-}
-/*.move0{
-    order: 0;
-}
-.move1{
-    order: 1;
-}
-.move2{
-    order: 2;
-}
-.move3{
-    order: 3;
-}*/
-/*------*/
-
 .bigTitle{ 
     font-size: calc(4rem + 1.3vw);
     margin-bottom: 40px;
+    @media (min-width: 992px){
+        font-size: 5rem;
+    }
 }
 .flavorText{
     display: block;
@@ -172,155 +65,12 @@ h1, h2, h3{
     margin-right: 10px;
     margin-bottom: 10px;
 }
-
-/*Homepage Styles*/
-.pgHome{ 
-    margin-bottom: unset;
-    margin-top: unset;   /*Home doesn't need the same margin adjustments as the other pages*/
-}
-.flavorText, .softEngi{
-    font-size: calc(1.5rem + 1.3vw);
-}
-.homeCTA{
-    min-height: 300px;
-    text-align: center;
-    justify-content: space-between;
-}
-.ctaLink{
-    margin: 10px 0;
-    a{
-        color: white;
-        font-size: 1.5rem;
-    }
-}
-.homeLinks{
-    margin-top: 50px;
-}
-.homeCTA{
-    span{
-        a{
-            display: inline-block;
-            text-decoration: none;
-            padding: 5px;
-            width: 200px;
-        }
-    }
-}  
-
-/*About/Resume page styles*/
-.workItemSkills {
-    ul{
-        list-style-type: none;
-        padding: 0;
-    }
-}
-
-.allSkills{
-    overflow: scroll;
-    overflow-x: hidden;
-}
-.allSkills::-webkit-scrollbar{
-    color: white;
-    background: none;
-}
-.otherSkills, .allSkills{
-    transition: all cubic-bezier(0,0,0,1) 0.5s;
-    
-}
-.showThis{
-    height: 1000px;
-    article{
-        opacity: 1;
-        width: 100%;
-    }
-    transition: all cubic-bezier(0,0,0,1) 0.5s;
-    
-}
-.hideThis{
-    height: 70px;
-    article{
-        opacity: 0;
-        width: 0px;
-    }
-    transition: all cubic-bezier(0,0,0,1) 0.5s;
-    
-}
-
-.certRow figure{
-    height: 250px
-}
-
-/*Projects page styles*/
-.projectText{
-    display: flex;
-    flex-direction: column;
-}
-
-/*Contact page styles*/
-.contactForm{
-    padding: 20px;
-    border-radius: 10px;
-    background: rgba(0, 0, 0, 0.5);
-    backdrop-filter: saturate(180%) blur(15px);
-}
-.contactForm input, .contactForm textarea{
-    background: none;
-    color: white;
-}
-.contactForm input::placeholder, .contactForm textarea::placeholder{
-    color: white;
-    font-style: italic;
-}
-.formRow{
-    fieldset{
-        margin-top: 10px;
-        margin-bottom: 10px;
-        label{
-            margin-bottom: 5px;
-        }
-    }
-} 
-.formRow input:active, .formRow textarea:active, 
-.formRow input:focus, .formRow textarea:focus{
-    background: none;
-    border: 1px solid white;
-    color: white;
-}
-.req::after{
-    content: "*";
-    color: rgb(255, 255, 255);
-    display: inline-block;
-    margin-left: 5px;
-    font-size: 1.3rem;
-}
-.contactInfo{
-    h2{
-        font-size: 2rem;
-    }
-}
-.contactLink{
-    width: 250px;
-    font-size: 1.5rem;
-}
-.contactLink{
-    i{
-        font-size: 1.5rem;
-    }
-} 
-.copyIcon{
-    color: rgba(255, 255, 255, 0);
-    transition: color 0.2s ease-in-out;
-}
-.copyIconShow{
-    color: rgba(255, 255, 255, 1);
-    transition: color 0.2s ease-in-out;
-}
-/*Media Queries*/
-@media (min-width: 992px){
-    .flavorText, .softEngi{
-        font-size: 2.4rem;
-    }
-    .bigTitle{
-        font-size: 5rem;
+.navLink{
+    font-size: 1.6rem;
+    text-align:center;
+    text-shadow: none;
+    transition: text-shadow .3s ease-in-out;
+    &:hover{
+        text-shadow: -1px -1px 1px #ffffff89, 1px -1px 3px #ffffff89, -1px 1px 1px #ffffff89, 1px 1px 1px #ffffff89;
     }
 }

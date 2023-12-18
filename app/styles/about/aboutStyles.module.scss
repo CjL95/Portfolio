@@ -1,0 +1,41 @@
+.workItemSkills {
+    ul{
+        list-style-type: none;
+        padding: 0;
+    }
+}
+
+.allSkills{
+    overflow: scroll;
+    overflow-x: hidden;
+}
+.allSkills::-webkit-scrollbar{
+    color: white;
+    background: none;
+}
+.otherSkills, .allSkills{
+    transition: all cubic-bezier(0,0,0,1) 0.5s;
+    
+}
+.showThis{
+    height: 1000px;
+    article{
+        opacity: 1;
+        width: 100%;
+    }
+    transition: all cubic-bezier(0,0,0,1) 0.5s;
+    
+}
+.hideThis{
+    height: 70px;
+    article{
+        opacity: 0;
+        width: 0px;
+    }
+    transition: all cubic-bezier(0,0,0,1) 0.5s;
+    
+}
+
+.certRow figure{
+    height: 250px
+}

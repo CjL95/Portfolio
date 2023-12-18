@@ -3,6 +3,7 @@
 import React from 'react';
 import { ProjectItem } from '../components/Projects/project_item';
 import { motion, AnimatePresence } from 'framer-motion';
+import styles from '../styles/projects/projectStyles.module.scss';
 
 export default function Projects():JSX.Element{
     const [projects, setProjects] = React.useState([
@@ -242,8 +243,8 @@ export default function Projects():JSX.Element{
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}className="container pgProjects pgMain">
-                <section className="row projectFilterSidebar">
-                    <div className="col-12 projectFilter"> 
+                <section className={`row ${styles.projectFilterSidebar}`}>
+                    <div className={`col-12 ${styles.projectFilter}`}> 
                         <h2 className="text-center">View Projects By Filter</h2>
                         <div className="row">
                             {
@@ -251,11 +252,11 @@ export default function Projects():JSX.Element{
                                     return(
                                             <button key={index} className={
                                                 skill.toggled ? 
-                                                "btn btn-light col-6 col-md-3 col-lg-2 px-0 filterButton" : 
-                                                "btn btn-outline-light col-6 col-md-3 col-lg-2 px-0 filterButton"
+                                                `btn btn-light col-6 col-md-3 col-lg-2 px-0 ${styles.filterButton}` : 
+                                                `btn btn-outline-light col-6 col-md-3 col-lg-2 px-0 ${styles.filterButton}`
                                             } 
                                             id={skill.name} onClick={btnToggle}>
-                                                <i key={index + 1} className={skill.toggled ? skill.icon + ' text-dark' : skill.icon}></i>  {skill.name}
+                                                <i key={index + 1} className={skill.toggled ? `${styles[skill.icon]} text-dark` : styles[skill.icon]}></i>  {skill.name}
                                             </button> 
                                     );
                                 })
@@ -266,7 +267,7 @@ export default function Projects():JSX.Element{
                         </div>
                     </div>
                 </section>
-                <section className="row projectList">
+                <section className={`row ${styles.projectList}`}>
                     {
                         projects.map((project: any, index: any):JSX.Element => {
                             let skillsMatch = skills.filter((skill: any)=> project.skills.includes(skill.name));
