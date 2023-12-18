@@ -1,4 +1,5 @@
 import React from 'react';
+import styles from '../../styles/projects/projectStyles.module.scss';
 interface ProjectItemProps {
     content: any;
     key: Number;
@@ -9,7 +10,7 @@ export const ProjectItem = ({content}: ProjectItemProps):JSX.Element => {
         <figure className="col-sm-12 col-md-6">
             <h2>{content.name}</h2>
             <img src={content.image} alt={content.name} className="img-fluid" />
-            <figcaption className="projectText">
+            <figcaption className={styles.projectText}>
                 <p>{content.description}</p>
                 <span>Skills: {skittles}</span>
                 <span>Contributions: </span>

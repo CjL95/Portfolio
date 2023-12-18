@@ -1,0 +1,37 @@
+.topNav{
+    min-height: 75px;
+}
+.navbarNav{
+    width: 100%;
+}
+.hamb{
+    width: 100%;
+    outline: none;
+    background: none;
+    border: none;
+    i{
+        font-size: 2rem;
+    }
+}
+.navItem{
+    .hide{
+        opacity: 0;
+    }
+}
+
+.navLink{
+    font-size: 1.6rem;
+    text-align:center;
+    text-shadow: none;
+    transition: text-shadow .3s ease-in-out;
+    &:hover{
+        text-shadow: -1px -1px 1px #ffffff89, 1px -1px 3px #ffffff89, -1px 1px 1px #ffffff89, 1px 1px 1px #ffffff89;
+    }
+}
+/*page indicator using bootstrap display*/
+.navInd{
+    transition: opacity .2s ease-in-out;
+} 
+.d-none{
+    transition: display .3s ease-in-out;
+}

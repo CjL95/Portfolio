@@ -4,6 +4,8 @@ import  React, {useEffect} from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { WorkItem } from '../components/About/work_item';
 import { ListItem } from '../components/Common/list_item';
+import styles from '../styles/about/aboutStyles.module.scss';
+
 export default function About():JSX.Element{  
     const [exp, setExp]: any = React.useState([{
         img: "http://localhost:3000/inc/img/250-250.png",
@@ -241,7 +243,7 @@ export default function About():JSX.Element{
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             className="container pgAbout pgMain">
-                <section className="row featSkills">
+                <section className={`row ${styles.featSkills}`}>
                     <div className='col-12 mb-3'>
                         <h2>Featured Skills</h2>
                     </div>
@@ -254,7 +256,7 @@ export default function About():JSX.Element{
                 <button className="btn btn-outline-light mb-3" type="button" onClick={allSkillsViz}>
                     <h2 className="my-0">All Skills &#10095;</h2>
                 </button>
-                <section className={"row allSkills " + (hide ? "hideThis" : "showThis")} id="allSkills">
+                <section className={`row ${styles.allSkills} ${hide ? styles.hideThis : styles.showThis}`} id="allSkills">
                     <div className='col-12'>
                         <article className="row">
                             {
@@ -273,7 +275,7 @@ export default function About():JSX.Element{
                         })
                     }
                 </section>
-                <section className="row certRow">
+                <section className={`row ${styles.certRow}`}>
                     <h2>Certifications</h2>
                     {
                         certs.map((i: any, index: number) => {  
