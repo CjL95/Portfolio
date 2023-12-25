@@ -253,9 +253,11 @@ export default function About():JSX.Element{
                         })
                     }
                 </section>
-                <button className="btn btn-outline-light mb-3" type="button" onClick={allSkillsViz}>
-                    <h2 className="my-0">All Skills &#10095;</h2>
-                </button>
+                <section className={`row ${styles.allSkillBtn}`}>
+                    <button className="btn btn-outline-light mb-3" type="button" onClick={allSkillsViz}>
+                        <h2 className="my-0">All Skills &#10095;</h2>
+                    </button>
+                </section>
                 <section className={`row ${styles.allSkills} ${hide ? styles.hideThis : styles.showThis}`} id="allSkills">
                     <div className='col-12'>
                         <article className="row">

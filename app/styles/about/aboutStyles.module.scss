@@ -4,10 +4,13 @@
         padding: 0;
     }
 }
+.allSkillBtn{
 
+}
 .allSkills{
     overflow: scroll;
     overflow-x: hidden;
+    border-bottom: 1px solid white;
 }
 .allSkills::-webkit-scrollbar{
     color: white;
@@ -19,20 +22,20 @@
 }
 .showThis{
     height: 1000px;
-    article{
+    /*article{
         opacity: 1;
         width: 100%;
-    }
-    transition: all cubic-bezier(0,0,0,1) 0.5s;
+    }*/
+    transition: height cubic-bezier(0,0,0,1) 0.5s;
     
 }
 .hideThis{
-    height: 70px;
-    article{
+    height: 0px;
+    /*article{
         opacity: 0;
         width: 0px;
-    }
-    transition: all cubic-bezier(0,0,0,1) 0.5s;
+    }*/
+    transition: height cubic-bezier(0,0,0,1) 0.5s;
     
 }
 
