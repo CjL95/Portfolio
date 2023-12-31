@@ -6,6 +6,10 @@
   padding: 0;
 }
 
+.aboutStyles_allSkillBtn__rD4dE button {
+  width: 200px;
+}
+
 .aboutStyles_allSkills__1LHA0 {
   overflow: scroll;
   overflow-x: hidden;
@@ -23,19 +27,11 @@
 
 .aboutStyles_showThis__fGrEz {
   height: 1000px;
-  /*article{
-      opacity: 1;
-      width: 100%;
-  }*/
   transition: height cubic-bezier(0, 0, 0, 1) 0.5s;
 }
 
 .aboutStyles_hideThis__4rQ4C {
   height: 0px;
-  /*article{
-      opacity: 0;
-      width: 0px;
-  }*/
   transition: height cubic-bezier(0, 0, 0, 1) 0.5s;
 }
 

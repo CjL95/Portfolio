@@ -5,7 +5,9 @@
     }
 }
 .allSkillBtn{
-
+    button{
+        width:200px;
+    }
 }
 .allSkills{
     overflow: scroll;
@@ -18,27 +20,15 @@
 }
 .otherSkills, .allSkills{
     transition: all cubic-bezier(0,0,0,1) 0.5s;
-    
 }
 .showThis{
     height: 1000px;
-    /*article{
-        opacity: 1;
-        width: 100%;
-    }*/
     transition: height cubic-bezier(0,0,0,1) 0.5s;
-    
 }
 .hideThis{
     height: 0px;
-    /*article{
-        opacity: 0;
-        width: 0px;
-    }*/
     transition: height cubic-bezier(0,0,0,1) 0.5s;
-    
 }
-
 .certRow figure{
     height: 250px
 }
