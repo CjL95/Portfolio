@@ -6,9 +6,14 @@
   padding: 0;
 }
 
+.aboutStyles_allSkillBtn__rD4dE button {
+  width: 200px;
+}
+
 .aboutStyles_allSkills__1LHA0 {
   overflow: scroll;
   overflow-x: hidden;
+  border-bottom: 1px solid white;
 }
 
 .aboutStyles_allSkills__1LHA0::-webkit-scrollbar {
@@ -22,20 +27,12 @@
 
 .aboutStyles_showThis__fGrEz {
   height: 1000px;
-  transition: all cubic-bezier(0, 0, 0, 1) 0.5s;
-}
-.aboutStyles_showThis__fGrEz article {
-  opacity: 1;
-  width: 100%;
+  transition: height cubic-bezier(0, 0, 0, 1) 0.5s;
 }
 
 .aboutStyles_hideThis__4rQ4C {
-  height: 70px;
-  transition: all cubic-bezier(0, 0, 0, 1) 0.5s;
-}
-.aboutStyles_hideThis__4rQ4C article {
-  opacity: 0;
-  width: 0px;
+  height: 0px;
+  transition: height cubic-bezier(0, 0, 0, 1) 0.5s;
 }
 
 .aboutStyles_certRow__Debw6 figure {
