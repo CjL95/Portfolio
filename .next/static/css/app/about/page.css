@@ -6,16 +6,34 @@
   padding: 0;
 }
 
-.aboutStyles_allSkillBtn__rD4dE button {
-  width: 200px;
+.aboutStyles_allSkillBtnGroup__XEivu button {
+  font-size: 1.4rem;
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 400;
+}
+.aboutStyles_allSkillBtnGroup__XEivu .aboutStyles_allSkillMainBtn__JM1RY {
+  width: 250px;
+}
+.aboutStyles_allSkillBtnGroup__XEivu .aboutStyles_allSkillChevBtn___zWFU:hover {
+  background: none;
+}
+
+.aboutStyles_btnRotatefalse__vUyr2 {
+  display: inline-block;
+  transform: rotate(90deg);
+  transition: transform 0.2s ease-in-out;
+}
+
+.aboutStyles_btnRotatetrue__UAk_G {
+  display: inline-block;
+  transform: unset;
+  transition: transform 0.2s ease-in-out;
 }
 
 .aboutStyles_allSkills__1LHA0 {
-  overflow: scroll;
-  overflow-x: hidden;
+  overflow: hidden;
   border-bottom: 1px solid white;
 }
-
 .aboutStyles_allSkills__1LHA0::-webkit-scrollbar {
   color: white;
   background: none;

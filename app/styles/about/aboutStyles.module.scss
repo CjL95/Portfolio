@@ -1,22 +1,41 @@
+$main-font: 'Montserrat', sans-serif;
+$secondary-font: 'Bebas Neue', sans-serif;
 .workItemSkills {
     ul{
         list-style-type: none;
         padding: 0;
     }
 }
-.allSkillBtn{
+.allSkillBtnGroup{
     button{
-        width:200px;
+        font-size: 1.4rem;
+        font-family: $secondary-font;
+        font-weight: 400;
+    }
+    .allSkillMainBtn{
+        width: 250px;
+    }
+    .allSkillChevBtn:hover{
+        background: none;
     }
 }
-.allSkills{
-    overflow: scroll;
-    overflow-x: hidden;
-    border-bottom: 1px solid white;
+.btnRotatefalse{
+    display: inline-block;
+    transform: rotate(90deg);
+    transition: transform 0.2s ease-in-out;
 }
-.allSkills::-webkit-scrollbar{
-    color: white;
-    background: none;
+.btnRotatetrue{
+    display: inline-block;
+    transform: unset;
+    transition: transform 0.2s ease-in-out;
+}
+.allSkills{
+    overflow: hidden;
+    border-bottom: 1px solid white;
+    &::-webkit-scrollbar{
+        color: white;
+        background: none;
+    }
 }
 .otherSkills, .allSkills{
     transition: all cubic-bezier(0,0,0,1) 0.5s;
