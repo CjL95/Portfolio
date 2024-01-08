@@ -228,13 +228,18 @@ export default function About():JSX.Element{
         icon: "fa-brands fa-free-code-camp"
     }]);
     const [hide, setHide]: any = React.useState(true);
+    const [dis, setDis]: any = React.useState(false);
 
     const allSkillsViz = () => {
-        setHide((prev: any) =>{
-            prev = !prev;
-            return prev;
-        });
+        setHide(!hide);
+        setDis(true);
     };
+    useEffect(()=>{
+        const timer = setTimeout(() => {
+            setDis(false);
+        }, 200);
+        return () => clearTimeout(timer);
+    },[hide])
 
     return(
         <AnimatePresence>
@@ -254,9 +259,16 @@ export default function About():JSX.Element{
                     }
                 </section>
                 <section className={`row ${styles.allSkillBtn}`}>
-                    <button className="btn btn-outline-light mb-3" type="button" onClick={allSkillsViz}>
-                        <h2 className="my-0">All Skills &#10095;</h2>
-                    </button>
+                    <figure className={`col-12`}>
+                        <div className={`btn-group ${styles.allSkillBtnGroup}`} role="group" aria-label="expandSkills">
+                            <button className={`btn btn-outline-light mb-3 ${styles.allSkillMainBtn}`} type="button" onClick={allSkillsViz}>
+                                ALL SKILLS
+                            </button>
+                            <button className={`btn btn-outline-light mb-3 ${styles.allSkillChevBtn}`} type="button" onClick={allSkillsViz}>
+                                <span className={`${hide ? styles.btnRotatetrue : styles.btnRotatefalse}`}>&#10095;</span>
+                            </button>
+                        </div>
+                    </figure>
                 </section>
                 <section className={`row ${styles.allSkills} ${hide ? styles.hideThis : styles.showThis}`} id="allSkills">
                     <div className='col-12'>
