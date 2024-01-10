@@ -246,14 +246,14 @@ export default function Projects():JSX.Element{
                 <section className={`row ${styles.projectFilterSidebar}`}>
                     <div className={`col-12 ${styles.projectFilter}`}> 
                         <h2 className="text-center">View Projects By Filter</h2>
-                        <div className="row">
+                        <div className="row g-2">
                             {
                                 skills.map((skill: any, index: any):JSX.Element => {
                                     return(
                                             <button key={index} className={
                                                 skill.toggled ? 
-                                                `btn btn-light col-6 col-md-3 col-lg-2 px-0 ${styles.filterButton}` : 
-                                                `btn btn-outline-light col-6 col-md-3 col-lg-2 px-0 ${styles.filterButton}`
+                                                `btn btn-light col-6 col-md-4 px-0 ${styles.filterButton}` : 
+                                                `btn btn-outline-light col-6 col-md-4 px-0 ${styles.filterButton}`
                                             } 
                                             id={skill.name} onClick={btnToggle}>
                                                 <i key={index + 1} className={skill.toggled ? `${styles[skill.icon]} text-dark` : styles[skill.icon]}></i>  {skill.name}
@@ -261,7 +261,7 @@ export default function Projects():JSX.Element{
                                     );
                                 })
                             }
-                            <button className="btn btn-outline-light col-6 col-md-3 col-lg-2 px-0 my-3" onClick={clearFilters}>
+                            <button className={`btn btn-outline-light col-6 col-md-4 px-0 ${styles.filterButton}`} onClick={clearFilters}>
                                 X Clear Filters
                             </button>
                         </div>

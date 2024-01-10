@@ -250,7 +250,7 @@ export default function About():JSX.Element{
             className="container pgAbout pgMain">
                 <section className={`row ${styles.featSkills}`}>
                     <div className='col-12 mb-3'>
-                        <h2>Featured Skills</h2>
+                        <h2 className="mb-3">Featured Skills</h2>
                     </div>
                     {
                         skills.map((i: any, index: number) => {
@@ -265,7 +265,7 @@ export default function About():JSX.Element{
                                 ALL SKILLS
                             </button>
                             <button className={`btn btn-outline-light mb-3 ${styles.allSkillChevBtn}`} type="button" onClick={allSkillsViz}>
-                                <span className={`${hide ? styles.btnRotatetrue : styles.btnRotatefalse}`}>&#10095;</span>
+                                <i className={`fa-solid fa-chevron-right ${hide ? styles.btnRotatetrue : styles.btnRotatefalse}`}></i>
                             </button>
                         </div>
                     </figure>
@@ -281,8 +281,8 @@ export default function About():JSX.Element{
                         </article>
                     </div>
                 </section>
-                <section className="row my-3">
-                    <h2>Experience</h2>
+                <section className={`row my-3 ${styles.expSection}`}>
+                    <h2 className="mb-3">Experience</h2>
                     { 
                         exp.map((i: any, index: number) => {  
                             return(<WorkItem key={index} info={i} skills={skills}/>);
@@ -290,7 +290,7 @@ export default function About():JSX.Element{
                     }
                 </section>
                 <section className={`row ${styles.certRow}`}>
-                    <h2>Certifications</h2>
+                    <h2 className="mb-3">Certifications</h2>
                     {
                         certs.map((i: any, index: number) => {  
                             return(<ListItem key={index} item={i} colConfig={'col-12 col-md-6 '}/>);

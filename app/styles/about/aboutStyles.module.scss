@@ -15,8 +15,8 @@ $secondary-font: 'Bebas Neue', sans-serif;
     .allSkillMainBtn{
         width: 250px;
     }
-    .allSkillChevBtn:hover{
-        background: none;
+    .allSkillChevBtn:hover > i{
+        color: black;
     }
 }
 .btnRotatefalse{
@@ -32,6 +32,7 @@ $secondary-font: 'Bebas Neue', sans-serif;
 .allSkills{
     overflow: hidden;
     border-bottom: 1px solid white;
+    padding: unset;
     &::-webkit-scrollbar{
         color: white;
         background: none;
@@ -48,6 +49,11 @@ $secondary-font: 'Bebas Neue', sans-serif;
     height: 0px;
     transition: height cubic-bezier(0,0,0,1) 0.5s;
 }
+
+.expSection{
+    border-bottom: 1px solid white;
+}
+
 .certRow figure{
     height: 250px
 }

@@ -14,8 +14,8 @@
 .aboutStyles_allSkillBtnGroup__XEivu .aboutStyles_allSkillMainBtn__JM1RY {
   width: 250px;
 }
-.aboutStyles_allSkillBtnGroup__XEivu .aboutStyles_allSkillChevBtn___zWFU:hover {
-  background: none;
+.aboutStyles_allSkillBtnGroup__XEivu .aboutStyles_allSkillChevBtn___zWFU:hover > i {
+  color: black;
 }
 
 .aboutStyles_btnRotatefalse__vUyr2 {
@@ -33,6 +33,7 @@
 .aboutStyles_allSkills__1LHA0 {
   overflow: hidden;
   border-bottom: 1px solid white;
+  padding: unset;
 }
 .aboutStyles_allSkills__1LHA0::-webkit-scrollbar {
   color: white;
@@ -51,6 +52,10 @@
 .aboutStyles_hideThis__4rQ4C {
   height: 0px;
   transition: height cubic-bezier(0, 0, 0, 1) 0.5s;
+}
+
+.aboutStyles_expSection__DPAje {
+  border-bottom: 1px solid white;
 }
 
 .aboutStyles_certRow__Debw6 figure {
