@@ -96,7 +96,7 @@ export default function Contact():JSX.Element{
                         </p>
                         
                     </article>
-                    <form onSubmit={handleSubmit} method="POST" className={`col-12 col-md-6 px-4 ${styles.contactForm}`}>
+                    <form onSubmit={handleSubmit} method="POST" className={`col-12 col-lg-6 px-4 ${styles.contactForm}`}>
                         <input onChange={handleChange} id="filter" type="checkbox" name="beep_boop" value="areUBot" className="d-none" ref={areUBot}/>
                         <div className={`row ${styles.formRow}`}>
                             <fieldset className="col-12 col-md-6">
@@ -137,7 +137,7 @@ export default function Contact():JSX.Element{
                             </fieldset>
                         </div>
                     </form>
-                    <article className={`col-12 col-md-6 ${styles.contactInfo} px-4`}>
+                    <article className={`col-12 col-lg-6 ${styles.contactInfo} px-4`}>
                         <h2>Contact Info</h2>
                         <div className="row">
                             <span className={styles.contactLink}><a className={`text-start nav-link ${styles.navLink} ${styles.contactLink}`} href="https://www.linkedin.com/in/chris-long-232223206/"><i className="fa-brands fa-linkedin"></i> Chris Long</a></span>
