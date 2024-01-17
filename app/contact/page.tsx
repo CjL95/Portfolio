@@ -27,17 +27,17 @@ export default function Contact():JSX.Element{
 
     const handleSubmit = async (e: any) => { //Handles form submission
         e.preventDefault(); 
-        setResponses(prev=> prev + 1);
+        setResponses(prev=> prev + 1); //Increments the number of responses
         if(areUBot.current?.checked){
             return (alert("Bad request. Please try again."), e.target.reset());//If the bot filter is checked, reload the page
         } 
-        if(responses > 2){
+        if(responses > 2){ //If the number of responses is greater than 2, alert the user and reset the form
             return (alert("You've sent too many messages. Please wait before sending more."), e.target.reset())
         }
         try{
-            await fetch('./submit', {
+            await fetch('./submit', { //Sends the form data to the server
                 method: 'POST',
-                headers: {
+                headers: { 
                     'Content-Type': 'application/json'
                 },
                 body: JSON.stringify(input)

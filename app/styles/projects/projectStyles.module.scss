@@ -1,4 +1,51 @@
+$main-font: 'Montserrat', sans-serif;
+$secondary-font: 'Bebas Neue', sans-serif;
 .projectText{
     display: flex;
     flex-direction: column;
+}
+.projectFilter{
+    padding: 15px;
+}
+.allSkills{
+    overflow: hidden;
+    border-bottom: 1px solid white;
+    padding: 15px;
+    &::-webkit-scrollbar{
+        color: white;
+        background: none;
+    }
+}
+.showThis{
+    height: 800px;
+    padding: 15px;
+    transition: height cubic-bezier(0,0,0,1) 0.5s;
+}
+.hideThis{
+    height: 0px;
+    padding: unset;
+    transition: height cubic-bezier(0,0,0,1) 0.5s;
+}
+.allSkillBtnGroup{
+    button{
+        font-size: 1.4rem;
+        font-family: $secondary-font;
+        font-weight: 400;
+    }
+    .allSkillMainBtn{
+        width: 250px;
+    }
+    .allSkillChevBtn:hover > i{
+        color: black;
+    }
+}
+.btnRotatefalse{
+    display: inline-block;
+    transform: rotate(90deg);
+    transition: transform 0.2s ease-in-out;
+}
+.btnRotatetrue{
+    display: inline-block;
+    transform: unset;
+    transition: transform 0.2s ease-in-out;
 }

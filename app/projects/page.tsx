@@ -1,6 +1,6 @@
 'use client'
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import { ProjectItem } from '../components/Projects/project_item';
 import { motion, AnimatePresence } from 'framer-motion';
 import styles from '../styles/projects/projectStyles.module.scss';
@@ -218,25 +218,32 @@ export default function Projects():JSX.Element{
             featured: false
         }
     ]);
+    const [hide, setHide]: any = React.useState(true);
+    const [dis, setDis]: any = React.useState(false);
 
     const btnToggle = (e: any) => {
         if(!skills)return null;
-        const skillChoice = skills.findIndex((i: any)=> i.name === e.target.id);
-        setSkills((prev: Array<{name: string, toggled: boolean, icon: string}>)=> {
-            if(!prev[skillChoice]) return [...prev];
-            prev[skillChoice].toggled = !prev[skillChoice].toggled;
-            return [...prev];
-        });
+        const skillChoice = e.target.id;
+        setSkills((skills.map((skill: any)=>{
+            if(skill.name === skillChoice) skill.toggled = !skill.toggled;
+            return skill;
+        })))
+    };
+    const clearFilters = ():void => {
+        setSkills(skills.map((skill: any)=>{
+            return {
+                ...skill,
+                toggled: false
+            }
+        }))
     };
 
-    const clearFilters = ():void => {
-        let tempSkills = skills;
-        setSkills((prev: any)=>{ 
-            tempSkills.forEach((skill: any)=> skill.toggled = false);
-            prev = tempSkills; 
-            return [...prev];
-        });
+    const allSkillsViz = () => {
+        setHide(!hide);
+        setDis(true);
+        return;
     };
+
     return(
         <AnimatePresence>
             <motion.main 
@@ -244,9 +251,18 @@ export default function Projects():JSX.Element{
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}className="container pgProjects pgMain">
                 <section className={`row ${styles.projectFilterSidebar}`}>
+                    <figure className={`col-12`}>
+                        <div className={`btn-group ${styles.allSkillBtnGroup}`} role="group" aria-label="expandSkills">
+                            <button className={`btn btn-outline-light mb-3 ${styles.allSkillMainBtn}`} type="button" onClick={allSkillsViz}>
+                            VIEW PROJECTS BY FILTER
+                            </button>
+                            <button className={`btn btn-outline-light mb-3 ${styles.allSkillChevBtn}`} type="button" onClick={allSkillsViz}>
+                                <i className={`fa-solid fa-chevron-right ${hide ? styles.btnRotatetrue : styles.btnRotatefalse}`}></i>
+                            </button>
+                        </div>
+                    </figure>
                     <div className={`col-12 ${styles.projectFilter}`}> 
-                        <h2 className="text-center">View Projects By Filter</h2>
-                        <div className="row g-2">
+                        <div className={`row g-2 ${styles.allSkills} ${hide ? styles.hideThis : styles.showThis}`}>
                             {
                                 skills.map((skill: any, index: any):JSX.Element => {
                                     return(
