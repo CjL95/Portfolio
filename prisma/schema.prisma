@@ -14,8 +14,8 @@ model Project {
     name        String
     description String?
     contribution String?
-    skills      String[]
     type        String
+    skills String[]
 }
 
 model Contact {
