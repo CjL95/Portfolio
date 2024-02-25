@@ -7,41 +7,6 @@ import styles from '../styles/projects/projectStyles.module.scss';
 
 export default function Projects():JSX.Element{
     const [projects, setProjects] = React.useState([
-        {
-            name: "Project 1",
-            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla euismod, nisl vitae aliquam ultricies, nunc nisl ultricies nunc, vitae ultricies nisl nisl vitae nis",
-            link: "https://www.google.com",
-            image: "http://localhost:3000/inc/img/800-800.png",
-            skills: ["HTML", "CSS", "JavaScript", "ReactJS"]
-        },
-        {
-            name: "Project 2",
-            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla euismod, nisl vitae aliquam ultricies, nunc nisl ultricies nunc, vitae ultricies nisl nisl vitae nis",
-            link: "https://www.google.com",
-            image: "http://localhost:3000/inc/img/800-800.png",
-            skills: ["HTML", "CSS", "JavaScript", "ReactJS", "Docker"]
-        },
-        {
-            name: "Project 3",
-            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla euismod, nisl vitae aliquam ultricies, nunc nisl ultricies nunc, vitae ultricies nisl nisl vitae nis",
-            link: "https://www.google.com",
-            image: "http://localhost:3000/inc/img/800-800.png",
-            skills: ["HTML", "CSS", "JavaScript", "ReactJS"]
-        },
-        {
-            name: "Project 4",
-            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla euismod, nisl vitae aliquam ultricies, nunc nisl ultricies nunc, vitae ultricies nisl nisl vitae nis",
-            link: "https://www.google.com",
-            image: "http://localhost:3000/inc/img/800-800.png",
-            skills: ["AWS", "Git", "C#", "HandlebarsJS"] 
-        },
-        {
-            name: "Project 5",
-            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla euismod, nisl vitae aliquam ultricies, nunc nisl ultricies nunc, vitae ultricies nisl nisl vitae nis",
-            link: "https://www.google.com",
-            image: "http://localhost:3000/inc/img/800-800.png",
-            skills: ["HTML", "PHP", "WordPress", "Apache"]    
-        }
     ]);
     const [skills, setSkills]:any = React.useState([
         {
@@ -244,6 +209,20 @@ export default function Projects():JSX.Element{
         return;
     };
 
+    const getProjects = async () => {
+        const proj = await fetch('./api/projects', { //retrieves projects from db
+            method: 'GET',
+            headers: { 
+                'Content-Type': 'application/json'
+            }
+        });
+        return proj.json();
+    }
+    useEffect(()=>{
+        getProjects().then((data: any)=>{
+            setProjects(data.proj);
+        });
+    }, []);
     return(
         <AnimatePresence>
             <motion.main 
@@ -288,8 +267,11 @@ export default function Projects():JSX.Element{
                         projects.map((project: any, index: any):JSX.Element => {
                             let skillsMatch = skills.filter((skill: any)=> project.skills.includes(skill.name));
                             let toggledSkills = skills.filter((skill: any)=> skill.toggled);
-                            return toggledSkills.every((i: any)=> skillsMatch.includes(i)) ? <ProjectItem key={index} content={project} /> : 
-                                skills.every((i:any)=>!i.toggled) ? <ProjectItem key={index} content={project} />: <></>;
+                            return toggledSkills.every((i: any)=>skillsMatch.includes(i)) ? 
+                                <ProjectItem key={index} content={project} /> : 
+                                skills.every((i:any)=>!i.toggled) ? 
+                                    <ProjectItem key={index} content={project} />: 
+                                    <></>;
                         })
                     }
                 </section>
