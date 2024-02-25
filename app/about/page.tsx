@@ -7,27 +7,7 @@ import { ListItem } from '../components/Common/list_item';
 import styles from '../styles/about/aboutStyles.module.scss';
 
 export default function About():JSX.Element{  
-    const [exp, setExp]: any = React.useState([{
-        img: "http://localhost:3000/inc/img/250-250.png",
-        title: "Web Developer",
-        company: "Company 1",
-        description: "Job Description"
-    },{
-        img: "http://localhost:3000/inc/img/250-250.png",
-        title: "Web Developer",
-        company: "Company 2",
-        description: "Job Description"
-    },{
-        img: "http://localhost:3000/inc/img/250-250.png",
-        title: "Web Developer",
-        company: "Company 3",
-        description: "Job Description"
-    },{
-        img: "http://localhost:3000/inc/img/250-250.png",
-        title: "Web Developer",
-        company: "Company 4",
-        description: "Job Description"
-    }]);
+    const [exp, setExp]: any = React.useState([{}]);
     const [skills, setSkills]: any = React.useState([
         {
             name: "Anaconda",
@@ -234,6 +214,20 @@ export default function About():JSX.Element{
         setHide(!hide);
         setDis(true);
     };
+    const getExp = async () => {
+        const exp = await fetch('./api/experience', { //retrieves projects from db
+            method: 'GET',
+            headers: { 
+                'Content-Type': 'application/json'
+            }
+        });
+        return exp.json();
+    }
+    useEffect(()=>{
+        getExp().then((data: any)=>{
+            setExp(data.exp);
+        });
+    }, []);
     useEffect(()=>{
         const timer = setTimeout(() => {
             setDis(false);

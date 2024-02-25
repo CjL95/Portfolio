@@ -35,7 +35,7 @@ export default function Contact():JSX.Element{
             return (alert("You've sent too many messages. Please wait before sending more."), e.target.reset())
         }
         try{
-            await fetch('./submit', { //Sends the form data to the server
+            await fetch('./api/submit', { //Sends the form data to the server
                 method: 'POST',
                 headers: { 
                     'Content-Type': 'application/json'
