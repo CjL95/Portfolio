@@ -38,14 +38,14 @@ export const WorkItem = (props: any):JSX.Element => {
             </section>
             <section className={`row ${styles.allSkillBtn}`}>
                 <div className={`col-12`}>
-                    <div className={`btn-group ${styles.allSkillBtnGroup}`} role="group" aria-label="expandSkills">
+                    <section className={`btn-group ${styles.allSkillBtnGroup}`} role="group" aria-label="expandSkills">
                         <button className={`btn btn-outline-light mb-3 ${styles.allSkillMainBtn}`} type="button" onClick={descViz}>
                             DESCRIPTION
                         </button>
                         <button className={`btn btn-outline-light mb-3 ${styles.allSkillChevBtn}`} type="button" onClick={descViz}>
                             <i className={`fa-solid fa-chevron-right ${hide ? styles.btnRotatetrue : styles.btnRotatefalse}`}></i>
                         </button>
-                    </div>
+                    </section>
                 </div>
             </section>
             <section className={`${styles.expDesc} ${hide ? styles.hideThis : styles.showThis}`}>
