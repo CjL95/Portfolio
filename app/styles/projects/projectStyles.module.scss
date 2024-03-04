@@ -49,3 +49,17 @@ $secondary-font: 'Bebas Neue', sans-serif;
     transform: unset;
     transition: transform 0.2s ease-in-out;
 }
+.allSkills, .expDesc{
+    overflow: hidden;
+    padding: unset;
+    &::-webkit-scrollbar{
+        color: white;
+        background: none;
+    }
+}
+.allSkills{
+    border-bottom: 1px solid white;
+}
+.otherSkills, .allSkills, .expDesc{
+    transition: all cubic-bezier(0,0,0,1) 0.5s;
+}

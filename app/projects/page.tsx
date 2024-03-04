@@ -177,7 +177,7 @@ export default function Projects():JSX.Element{
             featured: false
         },
         {
-            name: "WordPress",
+            name: "Wordpress",
             toggled: false,
             icon: "fa-brands fa-wordpress",
             featured: false
