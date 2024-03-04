@@ -1,6 +1,13 @@
 $main-font: 'Montserrat', sans-serif;
 $secondary-font: 'Bebas Neue', sans-serif;
+.workItem{
+    /*display: flex;
+    flex-direction: column;
+    justify-content: space-between;*/
+    min-height: 420px;
+}
 .workItemSkills {
+    height: 180px;
     ul{
         list-style-type: none;
         padding: 0;
@@ -29,16 +36,21 @@ $secondary-font: 'Bebas Neue', sans-serif;
     transform: unset;
     transition: transform 0.2s ease-in-out;
 }
-.allSkills{
+.allSkills, .expDesc{
     overflow: hidden;
-    border-bottom: 1px solid white;
     padding: unset;
     &::-webkit-scrollbar{
         color: white;
         background: none;
     }
 }
-.otherSkills, .allSkills{
+.allSkills{
+    border-bottom: 1px solid white;
+}
+.expDesc{
+    
+}
+.otherSkills, .allSkills, .expDesc{
     transition: all cubic-bezier(0,0,0,1) 0.5s;
 }
 .showThis{
@@ -56,4 +68,16 @@ $secondary-font: 'Bebas Neue', sans-serif;
 
 .certRow figure{
     height: 250px
+}
+
+/*job items*/
+.jobTitle{
+    height: 75px;
+}
+.jobTenure{
+    display: block;
+
+}
+.companyName{
+    display: block;
 }

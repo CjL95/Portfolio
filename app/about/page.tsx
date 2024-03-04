@@ -7,7 +7,7 @@ import { ListItem } from '../components/Common/list_item';
 import styles from '../styles/about/aboutStyles.module.scss';
 
 export default function About():JSX.Element{  
-    const [exp, setExp]: any = React.useState([{}]);
+    const [exp, setExp]: any = React.useState([{skills: []}]);
     const [skills, setSkills]: any = React.useState([
         {
             name: "Anaconda",
@@ -278,8 +278,8 @@ export default function About():JSX.Element{
                 <section className={`row my-3 ${styles.expSection}`}>
                     <h2 className="mb-3">Experience</h2>
                     { 
-                        exp.map((i: any, index: number) => {  
-                            return(<WorkItem key={index} info={i} skills={skills}/>);
+                        exp.map((i: any, index: number) => { 
+                            return(<WorkItem key={index} info={i} skills={i.skills}/>);
                         })
                     }
                 </section>
