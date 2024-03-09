@@ -187,25 +187,22 @@ export default function About():JSX.Element{
         img: "http://localhost:3000/inc/img/100-100.png",
         title: "Responsive Web Design",
         company: "FreeCodeCamp",
-        icon: "fa-brands fa-free-code-camp"
+        icon: "fa-brands fa-free-code-camp",
+        link: "https://www.freecodecamp.org/certification/cjl95/responsive-web-design"
     },
     {
         img: "http://localhost:3000/inc/img/100-100.png",
         title: "JavaScript Algorithms and Data Structures",
         company: "FreeCodeCamp",
-        icon: "fa-brands fa-free-code-camp"
+        icon: "fa-brands fa-free-code-camp",
+        link: "https://www.freecodecamp.org/certification/cjl95/javascript-algorithms-and-data-structures"
     },
     {
         img: "http://localhost:3000/inc/img/100-100.png",
-        title: "Front End Libraries",
-        company: "FreeCodeCamp",
-        icon: "fa-brands fa-free-code-camp"
-    },
-    {
-        img: "http://localhost:3000/inc/img/100-100.png",
-        title: "APIs and Microservices",
-        company: "FreeCodeCamp",
-        icon: "fa-brands fa-free-code-camp"
+        title: "IT Fundamentals (ITF+)",
+        company: "CompTIA",
+        icon: "fa-solid fa-computer",
+        link: "https://www.credly.com/badges/e15061d6-377f-45b2-9873-87d092252a57?source=linked_in_profile"
     }]);
     const [hide, setHide]: any = React.useState(true);
     const [dis, setDis]: any = React.useState(false);
@@ -244,7 +241,7 @@ export default function About():JSX.Element{
             className="container pgAbout pgMain">
                 <section className={`row ${styles.featSkills}`}>
                     <div className='col-12 mb-3'>
-                        <h2 className="mb-3">Featured Skills</h2>
+                        <h2 className="sectionTitle mb-3">Featured Skills</h2>
                     </div>
                     {
                         skills.map((i: any, index: number) => {
@@ -254,29 +251,29 @@ export default function About():JSX.Element{
                 </section>
                 <section className={`row ${styles.allSkillBtn}`}>
                     <figure className={`col-12`}>
-                        <div className={`btn-group ${styles.allSkillBtnGroup}`} role="group" aria-label="expandSkills">
-                            <button className={`btn btn-outline-light mb-3 ${styles.allSkillMainBtn}`} type="button" onClick={allSkillsViz}>
+                        <div className={`btn-group expandBtnGroup`} role="group" aria-label="expandSkills">
+                            <button className={`btn btn-outline-light mb-3 expandMainBtn`} type="button" onClick={allSkillsViz}>
                                 ALL SKILLS
                             </button>
-                            <button className={`btn btn-outline-light mb-3 ${styles.allSkillChevBtn}`} type="button" onClick={allSkillsViz}>
-                                <i className={`fa-solid fa-chevron-right ${hide ? styles.btnRotatetrue : styles.btnRotatefalse}`}></i>
+                            <button className={`btn btn-outline-light mb-3 expandChevBtn`} type="button" onClick={allSkillsViz}>
+                                <i className={`fa-solid fa-chevron-right ${hide ? `btnRotatetrue` : `btnRotatefalse`}`}></i>
                             </button>
                         </div>
                     </figure>
                 </section>
                 <section className={`row ${styles.allSkills} ${hide ? styles.hideThis : styles.showThis}`} id="allSkills">
                     <div className='col-12'>
-                        <article className="row">
+                        <article className={`row ${styles.skillItemWrapper}`}>
                             {
                                 skills.map((i: any, index: number) => {
-                                    return (<ListItem key={index} item={i} colConfig={'col-12 col-sm-6 col-md-4 '}/>);
+                                    return (<ListItem key={index} item={i} colConfig={'col-6 col-md-4 '}/>);
                                 })
                             }
                         </article>
                     </div>
                 </section>
                 <section className={`row my-3 ${styles.expSection}`}>
-                    <h2 className="mb-3">Experience</h2>
+                    <h2 className="sectionTitle mb-3">Experience</h2>
                     { 
                         exp.map((i: any, index: number) => { 
                             return(<WorkItem key={index} info={i} skills={i.skills}/>);
@@ -284,7 +281,7 @@ export default function About():JSX.Element{
                     }
                 </section>
                 <section className={`row ${styles.certRow}`}>
-                    <h2 className="mb-3">Certifications</h2>
+                    <h2 className="sectionTitle mb-3">Certifications</h2>
                     {
                         certs.map((i: any, index: number) => {  
                             return(<ListItem key={index} item={i} colConfig={'col-12 col-md-6 '}/>);

@@ -10,6 +10,7 @@ $secondary-font: 'Bebas Neue', sans-serif;
     font-family: $main-font;
     font-weight: 400;
     box-sizing:border-box;
+    text-decoration: none;
 }
 body{
     background-image: linear-gradient(rgba(0, 0, 0, 0.30), rgba(0, 0, 0, 0.60)), url('https://portfolio2023bucket.s3.amazonaws.com/bg-mist-resize.webp');
@@ -45,6 +46,17 @@ h1, h2, h3, .bigText{
     font-family: $secondary-font;
     font-weight: 400;
 }
+button, input[type="submit"]{
+    font-size: 1.4rem!important;
+    font-family: $secondary-font!important;
+    font-weight: 400!important;
+}
+.sectionTitle{
+    font-size: 3rem;
+    @media (min-width: 992px){
+        font-size: 4rem;
+    }
+}
     /*general body styles*/
 .pgMain{
     padding: 30px;
@@ -67,11 +79,30 @@ h1, h2, h3, .bigText{
     margin-bottom: 10px;
 }
 .navLink{
-    font-size: 1.6rem;
+    font-size: 1.5rem;
+    font-weight: 500;
     text-align:center;
     text-shadow: none;
     transition: text-shadow .3s ease-in-out;
     &:hover{
         text-shadow: -1px -1px 1px #ffffff89, 1px -1px 3px #ffffff89, -1px 1px 1px #ffffff89, 1px 1px 1px #ffffff89;
     }
+}
+.expandBtnGroup{
+    .expandMainBtn{
+        width: 250px;
+    }
+    .expandChevBtn:hover > i{
+        color: black;
+    }
+}
+.btnRotatefalse{
+    display: inline-block;
+    transform: rotate(90deg);
+    transition: transform 0.2s ease-in-out;
+}
+.btnRotatetrue{
+    display: inline-block;
+    transform: unset;
+    transition: transform 0.2s ease-in-out;
 }

@@ -24,25 +24,25 @@ export const ProjectItem = ({content}: ProjectItemProps):JSX.Element => {
     return(
         <figure className="col-sm-12 col-md-6">
             <h2>{content.name}</h2>
-            <img src={content.image} alt={content.name} className="img-fluid" />
             <figcaption className={styles.projectText}>
                 <span>Skills: {skills}</span>
-                <span>Contributions: </span>
-                <section className={`row ${styles.allSkillBtn}`}>
-                    <div className={`col-12`}>
-                        <div className={`btn-group ${styles.allSkillBtnGroup}`} role="group" aria-label="expandSkills">
-                            <button className={`btn btn-outline-light mb-3 ${styles.allSkillMainBtn}`} type="button" onClick={descViz}>
+                <section className="row">
+                    <div className="col-12 d-flex flex-wrap">
+                        <div className={`btn-group expandBtnGroup`} role="group" aria-label="expandSkills">
+                            <button className={`btn btn-outline-light mb-3 expandMainBtn`} type="button" onClick={descViz}>
                                 DESCRIPTION
                             </button>
-                            <button className={`btn btn-outline-light mb-3 ${styles.allSkillChevBtn}`} type="button" onClick={descViz}>
-                                <i className={`fa-solid fa-chevron-right ${hide ? styles.btnRotatetrue : styles.btnRotatefalse}`}></i>
+                            <button className={`btn btn-outline-light mb-3 expandChevBtn`} type="button" onClick={descViz}>
+                                <i className={`fa-solid fa-chevron-right ${hide ? `btnRotatetrue` : `btnRotatefalse`}`}></i>
                             </button>
                         </div>
+                        <a href={content.link} className="navLink text-white mx-2" target="_blank">
+                            <button className={`btn btn-outline-light mb-3`}>View Project</button>
+                        </a>
                     </div>
                 </section>
                 <p className={`${styles.expDesc} ${hide ? styles.hideThis : styles.showThis}`}>{content.description}</p>
             </figcaption>
-            <a href={content.link} target="_blank">View Project</a>
         </figure>
     );
 };

@@ -5,7 +5,7 @@ import { Footer } from './components/Footer/footer';
 import './styles/styles.scss';
 export const metadata: Metadata = {
   title: 'Chris Long',
-  description: 'Welcome to my portfolio!',
+  description: 'Musician, Gamer, and Software Engineer',
 }
 
 export default function RootLayout({
