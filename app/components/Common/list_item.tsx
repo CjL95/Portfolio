@@ -1,7 +1,17 @@
 import React from 'react';
 
 export const ListItem = (props: any):JSX.Element => {
-    return(
+    return props.item.link ?(
+        <figure className={props.colConfig + "d-flex align-items-center"}>
+            <a href={props.item.link}>
+                <i className={props.item.icon + " skillIcon"}></i>
+                <div>
+                    <h3>{props.item.name || props.item.title}</h3>
+                    {props.item.company && <span><strong>{props.item.company}</strong></span>}
+                </div>
+            </a>
+        </figure>
+        ):(
         <figure className={props.colConfig + "d-flex align-items-center"}>
             <i className={props.item.icon + " skillIcon"}></i>
             <div>

@@ -21,17 +21,17 @@ export default function Home (isVisible: any):JSX.Element{
             <section className={`row ${styles.homeLinks}`}>
                 <figure className="col-12">
                     <div className={`row ${styles.homeCTA}`}>
-                        <h2 className="col-12">Learn More About Me:</h2>
+                        <h2 className="sectionTitle col-12">Learn More About Me:</h2>
                         <article className={`col-12 ${styles.ctaBox}`}>
                             <div className="row">
                                 <span className={`col-sm-12 col-md-4 ${styles.ctaLink}`}>
-                                    <a className={styles.navLink} href="/about">Resume</a>
+                                    <a className="navLink" href="/about">Resume</a>
                                 </span>
                                 <span className={`col-sm-12 col-md-4 ${styles.ctaLink}`}>
-                                    <a className={styles.navLink} href="/contact">Contact Me</a>
+                                    <a className="navLink" href="/contact">Contact Me</a>
                                 </span>
                                 <span className={`col-sm-12 col-md-4 ${styles.ctaLink}`}>
-                                    <a className={styles.navLink} href="/projects">See My Work</a>
+                                    <a className="navLink" href="/projects">See My Work</a>
                                 </span>
                             </div>
                             

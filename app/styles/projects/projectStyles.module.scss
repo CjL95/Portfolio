@@ -17,37 +17,17 @@ $secondary-font: 'Bebas Neue', sans-serif;
     }
 }
 .showThis{
-    height: 640px;
+    height: 910px;
     padding: 15px;
-    transition: height cubic-bezier(0,0,0,1) 0.5s;
+    transition: min-height cubic-bezier(0,0,0,1) 0.5s;
+    @media screen and (min-width: 768px){
+        height: 640px;
+    }
 }
 .hideThis{
     height: 0px;
     padding: unset;
     transition: height cubic-bezier(0,0,0,1) 0.5s;
-}
-.allSkillBtnGroup{
-    button{
-        font-size: 1.4rem;
-        font-family: $secondary-font;
-        font-weight: 400;
-    }
-    .allSkillMainBtn{
-        width: 250px;
-    }
-    .allSkillChevBtn:hover > i{
-        color: black;
-    }
-}
-.btnRotatefalse{
-    display: inline-block;
-    transform: rotate(90deg);
-    transition: transform 0.2s ease-in-out;
-}
-.btnRotatetrue{
-    display: inline-block;
-    transform: unset;
-    transition: transform 0.2s ease-in-out;
 }
 .allSkills, .expDesc{
     overflow: hidden;
@@ -62,4 +42,30 @@ $secondary-font: 'Bebas Neue', sans-serif;
 }
 .otherSkills, .allSkills, .expDesc{
     transition: all cubic-bezier(0,0,0,1) 0.5s;
+}
+.filterBtnWrapper{
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    padding: 15px;
+    width: 300px;
+    @media screen and (min-width: 768px){
+        width: 100%;
+        
+    }
+    .clearFilterButton{
+        color: white;
+        padding: 10px;
+        font-size: 1.4rem;
+        font-family: $secondary-font;
+        font-weight: 400;
+        cursor: pointer;
+        transition: background-color 0.2s ease-in-out;
+        &:hover, &:active{
+            background-color: #ff0000;
+            color: white;
+        }
+    }
 }

@@ -210,7 +210,7 @@ export default function Projects():JSX.Element{
     };
 
     const getProjects = async () => {
-        const proj = await fetch('./api/projects', { //retrieves projects from db
+        const proj = await fetch('/api/projects', { //retrieves projects from db
             method: 'GET',
             headers: { 
                 'Content-Type': 'application/json'
@@ -221,8 +221,12 @@ export default function Projects():JSX.Element{
     useEffect(()=>{
         getProjects().then((data: any)=>{
             setProjects(data.proj);
+            console.log('projects set');
         });
     }, []);
+    /*getProjects().then((data: any)=>{
+        setProjects(data.proj);
+    });*/
     return(
         <AnimatePresence>
             <motion.main 
@@ -230,15 +234,21 @@ export default function Projects():JSX.Element{
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}className="container pgProjects pgMain">
                 <section className={`row ${styles.projectFilterSidebar}`}>
-                    <figure className={`col-12`}>
-                        <div className={`btn-group ${styles.allSkillBtnGroup}`} role="group" aria-label="expandSkills">
-                            <button className={`btn btn-outline-light mb-3 ${styles.allSkillMainBtn}`} type="button" onClick={allSkillsViz}>
+                    <div className='col-12 mb-3'>
+                        <h2 className="sectionTitle mb-3">My Projects</h2>
+                    </div>
+                    <figure className={`col-12 ${styles.filterBtnWrapper}`}>
+                        <div className={`btn-group expandBtnGroup`} role="group" aria-label="expandSkills">
+                            <button className={`btn btn-outline-light expandMainBtn`} type="button" onClick={allSkillsViz}>
                             VIEW PROJECTS BY FILTER
                             </button>
-                            <button className={`btn btn-outline-light mb-3 ${styles.allSkillChevBtn}`} type="button" onClick={allSkillsViz}>
-                                <i className={`fa-solid fa-chevron-right ${hide ? styles.btnRotatetrue : styles.btnRotatefalse}`}></i>
+                            <button className={`btn btn-outline-light expandChevBtn`} type="button" onClick={allSkillsViz}>
+                                <i className={`fa-solid fa-chevron-right ${hide ? `btnRotatetrue` : `btnRotatefalse`}`}></i>
                             </button>
                         </div>
+                        <button className={`${styles.clearFilterButton} btn btn-outline-light text-white`} onClick={clearFilters}>
+                         Clear Filters
+                        </button>
                     </figure>
                     <div className={`col-12 ${styles.projectFilter}`}> 
                         <div className={`row g-2 ${styles.allSkills} ${hide ? styles.hideThis : styles.showThis}`}>
@@ -256,9 +266,6 @@ export default function Projects():JSX.Element{
                                     );
                                 })
                             }
-                            <button className={`btn btn-outline-light col-6 col-md-4 px-0 ${styles.filterButton}`} onClick={clearFilters}>
-                                X Clear Filters
-                            </button>
                         </div>
                     </div>
                 </section>

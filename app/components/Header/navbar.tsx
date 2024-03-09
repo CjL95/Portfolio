@@ -37,16 +37,16 @@ export const Navbar = (props:any):JSX.Element =>{
                     <ul className={`navbar-nav ${styles.navbarNav} justify-content-start justify-content-lg-around align-items-start align-items-lg-center`}>
                         {links.map((link, index):JSX.Element =>{
                             return(
-                            <li className={`nav-item ${styles.navItem} d-flex justify-content-center align-items-center`} key={index}>
+                            <li className={`${styles.navItem} nav-item navLink d-flex justify-content-center align-items-center`} key={index}>
                                 <i className={`${styles.navInd} fa-solid fa-terminal ${position === index ? "" : styles.hide}`}></i>
-                                <Link className={`nav-link text-white ${styles.navLink} text-start`} aria-current="page" href={link.path}>
+                                <Link className={`nav-link text-white text-start`} aria-current="page" href={link.path}>
                                 {link.name}</Link>
                             </li>
                             )
                         })}
                     </ul>
                 </div>
-                <button className={`${styles.hamb} ${styles.navLink} d-lg-none`} type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <button className={`${styles.hamb} navLink d-lg-none`} type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     {/*<span className="navbar-toggler-icon"></span>*/}
                     <i className="fa-solid fa-chevron-down"></i>
                 </button>

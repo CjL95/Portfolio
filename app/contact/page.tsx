@@ -90,11 +90,10 @@ export default function Contact():JSX.Element{
             className="container pgContact pgMain">
                 <section className="row row-gap-3">
                     <article className={`col-12 ${styles.contactIntro}`}>
-                        <h1 className={styles.bigTitle}>Let's get to work!</h1>
-                        <p className={styles.flavorText}>
+                        <h2 className="sectionTitle mb-3">Let's Get to Work!</h2>
+                        <p className="flavorText">
                             I'm always looking for new opportunities to learn and grow. Reach out to me if you're interested in working together!
                         </p>
-                        
                     </article>
                     <form onSubmit={handleSubmit} method="POST" className={`col-12 col-lg-6 px-4 ${styles.contactForm}`}>
                         <input onChange={handleChange} id="filter" type="checkbox" name="beep_boop" value="areUBot" className="d-none" ref={areUBot}/>
@@ -140,8 +139,8 @@ export default function Contact():JSX.Element{
                     <article className={`col-12 col-lg-6 ${styles.contactInfo} px-4`}>
                         <h2>Contact Info</h2>
                         <div className="row">
-                            <span className={styles.contactLink}><a className={`text-start nav-link ${styles.navLink} ${styles.contactLink}`} href="https://www.linkedin.com/in/chris-long-232223206/"><i className="fa-brands fa-linkedin"></i> Chris Long</a></span>
-                            <span className={styles.contactLink}><a className={`text-start nav-link ${styles.navLink}`} href="https://github.com/CjL95"><i className="fa-brands fa-github"></i> CjL95</a></span>
+                            <span className={styles.contactLink}><a className={`text-start nav-link navLink ${styles.contactLink}`} href="https://www.linkedin.com/in/chris-long-232223206/"><i className="fa-brands fa-linkedin"></i> Chris Long</a></span>
+                            <span className={styles.contactLink}><a className={`text-start nav-link navLink`} href="https://github.com/CjL95"><i className="fa-brands fa-github"></i> CjL95</a></span>
                             <span id="disc" onMouseEnter={copyHover} onMouseLeave={copyHide} className={styles.contactLink}>
                                 <a className={`nav-link navLink text-start ${styles.contactLink}`} href="#" onClick={copyHandler}>
                                     <i className="fa-brands fa-discord"></i> @cjthedev <i ref={copy} className={`fa-solid fa-copy ${styles.copyIcon}`}></i>
