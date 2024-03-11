@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import { Resend } from "resend";
-import { getSecret } from "../get_envs/route";
+//import { getSecret } from "../get_envs/route";
 import { EmailTemplate } from "../email_template";
 import { session } from "../session";
 
