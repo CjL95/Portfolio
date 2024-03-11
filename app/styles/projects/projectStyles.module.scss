@@ -17,17 +17,17 @@ $secondary-font: 'Bebas Neue', sans-serif;
     }
 }
 .showThis{
-    height: 910px;
+    max-height: 950px;
     padding: 15px;
     transition: min-height cubic-bezier(0,0,0,1) 0.5s;
     @media screen and (min-width: 768px){
-        height: 640px;
+        max-height: 730px;
     }
 }
 .hideThis{
-    height: 0px;
+    max-height: 0px;
     padding: unset;
-    transition: height cubic-bezier(0,0,0,1) 0.5s;
+    transition: max-height cubic-bezier(0,0,0,1) 0.5s;
 }
 .allSkills, .expDesc{
     overflow: hidden;

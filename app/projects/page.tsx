@@ -39,12 +39,6 @@ export default function Projects():JSX.Element{
             featured: false           
         },
         {
-            name: "C#",
-            toggled: false,
-            icon: "fa-brands fa-microsoft",
-            featured: false
-        },
-        {
             name: "Cheerio",
             toggled: false,
             icon: "fa-solid fa-code",
@@ -55,12 +49,6 @@ export default function Projects():JSX.Element{
             toggled: false,
             icon: "fa-brands fa-css3-alt",
             featured: true
-        },
-        {
-            name: "Docker",
-            toggled: false,
-            icon: "fa-brands fa-docker",
-            featured: false
         },
         {
             name: "ExpressJS",
@@ -97,12 +85,6 @@ export default function Projects():JSX.Element{
             toggled: false,
             icon: "fa-brands fa-square-js",
             featured: true
-        },
-        {
-            name: "Microservices",
-            toggled: false,
-            icon: "fa-solid fa-code-branch",
-            featured: false
         },
         {
             name: "MongoDB",

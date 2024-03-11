@@ -4,6 +4,7 @@ import React, { useRef, useState } from 'react';
 import emailjs from 'emailjs-com';
 import { motion, AnimatePresence } from 'framer-motion';
 import styles from '../styles/contact/contactStyles.module.scss';
+import { Form, set } from 'react-hook-form';
 
 export default function Contact():JSX.Element{
     const areUBot = useRef<HTMLInputElement>(null); //tracks the checkbox for bot filtering
@@ -21,31 +22,30 @@ export default function Contact():JSX.Element{
 
     const [responses, setResponses] = useState(0); //Tracks the number of responses
 
+    const [loading, setLoading] = useState(false); //Tracks the loading state of the request
+
+    const [sendSuccess, setSendSuccess] = useState('danger'); //Tracks the success state of the request
+
+    const [sendResult, setSendResult] = useState({error: false, sent: false}); //Tracks the result of the email send
+
     const formatPhone = (phoneNum: any) => {  //Formats the phone number input
         return phoneNum.replace(/\W/, "").replace(/(\d{3})(\d{3})(\d{4})/, "$1-$2-$3"); //Formats phone number to ###-###-####
     };
 
-    const handleSubmit = async (e: any) => { //Handles form submission
+    const handleSubmit = async (e: any) => { //Controller for contact saving and email sending
+        setLoading(true);
+        let formStuff = JSON.stringify(Object.fromEntries((new FormData(e.target)).entries()));
+        //console.log(formStuff);
         e.preventDefault(); 
         setResponses(prev=> prev + 1); //Increments the number of responses
         if(areUBot.current?.checked){
             return (alert("Bad request. Please try again."), e.target.reset());//If the bot filter is checked, reload the page
         } 
         if(responses > 2){ //If the number of responses is greater than 2, alert the user and reset the form
-            return (alert("You've sent too many messages. Please wait before sending more."), e.target.reset())
+            return (alert("You've sent too many messages. Please wait before sending more."), e.target.reset(), setLoading(false))
         }
-        try{
-            await fetch('./api/submit', { //Sends the form data to the server
-                method: 'POST',
-                headers: { 
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(input)
-            });
-        }catch(e){
-            console.log(e);
-        }
-        sendMail(e.target);
+        setSendResult({...await sendMail(formStuff), sent: true}); //sends the response data to component state
+        setLoading(false);
     };
 
     const handleChange = (e: any) => { //Handles form input changes
@@ -57,16 +57,35 @@ export default function Contact():JSX.Element{
         }));
     }
 
-    const sendMail = async (target: any) => { //Sends the email
-        emailjs.sendForm(process.env.NEXT_PUBLIC_REACT_APP_MAIL_SERVICE_ID as string, process.env.NEXT_PUBLIC_REACT_APP_EMAIL_TEMPLATE_ID as string, target, process.env.NEXT_PUBLIC_REACT_APP_EMAIL_USER_ID)
-        .then((result: any) => {
-            alert("Message sent successfully!");
-            target.reset();
-        }, (error: any)=>{
-            console.log(error.text)
-        })
+    const sendMail = async (data: any) => { //Sends the email
+        try{
+            const sendMail = await fetch('./api/send_email', { //Sends the form data to the server
+                method: 'POST',
+                headers: { 
+                    'Content-Type': 'application/json'
+                },
+                body: data
+            });
+            return await sendMail.json();
+        }catch(error){
+            throw new Error('Error sending email');
+        }
     }
-
+    const saveContact = async (data: any) => { //Saves the contact form data to the database. Not currently working
+        console.log('save data fn fired');
+        try{
+            await fetch('./api/save_contact', { //Sends the form data to the server
+                method: 'POST',
+                headers: { 
+                    'Content-Type': 'application/json'
+                },
+                body: data 
+            });
+            console.log('data sent');
+        }catch(e){
+            console.log(e);
+        }
+    }
     const copyHandler = (e: any) => { //Copies the discord username to the clipboard
         e.preventDefault();
         'clipboard' in navigator ? navigator.clipboard.writeText("cjthedev") : '';
@@ -95,6 +114,8 @@ export default function Contact():JSX.Element{
                             I'm always looking for new opportunities to learn and grow. Reach out to me if you're interested in working together!
                         </p>
                     </article>
+                </section>
+                <section className="row row-gap-3">
                     <form onSubmit={handleSubmit} method="POST" className={`col-12 col-lg-6 px-4 ${styles.contactForm}`}>
                         <input onChange={handleChange} id="filter" type="checkbox" name="beep_boop" value="areUBot" className="d-none" ref={areUBot}/>
                         <div className={`row ${styles.formRow}`}>
@@ -131,9 +152,27 @@ export default function Contact():JSX.Element{
                             </fieldset>
                         </div>
                         <div className={`row ${styles.formRow}`}>
-                            <fieldset className="col-12 col-md-6">
-                                <input className="btn btn-outline-light" type="submit" value="Send" />
+                            <fieldset className="col-12 col-sm-6">
+                                {loading ?
+                                <button className="btn btn-outline-light" type="submit">
+                                    <div className="spinner-border text-white" role="status">
+                                        <span className="visually-hidden">Loading...</span>
+                                    </div>
+                                </button> :
+                                <button className="btn btn-outline-light" type="submit">Send</button>
+                                }
                             </fieldset>
+                            <figure className={`${styles.msgFlagWrapper} col-12 col-sm-6`}>
+                                <div className={`${styles.msgFlag}`}>
+                                    {!sendResult.sent ?
+                                    "" :
+                                    !sendResult.error ?
+                                        <span><i className="fa-solid fa-check text-success"></i> Message Sent!</span>
+                                    :
+                                        <span><i className="fa-solid fa-x text-danger"></i> {sendResult.error}</span>
+                                    }
+                                </div>
+                            </figure>
                         </div>
                     </form>
                     <article className={`col-12 col-lg-6 ${styles.contactInfo} px-4`}>
