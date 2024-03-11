@@ -1,6 +1,6 @@
 import nextAppSession, { promisifyStore } from 'next-app-session';
 import MongoStore from 'connect-mongo';
-import { getSecret } from './get_envs/route';
+//import { getSecret } from './get_envs/route';
 
 /*const mongoUrl = async() => await getSecret('DATABASE_URL');*/
 /*const sessSecret = async() =>{ 
