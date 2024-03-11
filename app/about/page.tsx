@@ -184,21 +184,18 @@ export default function About():JSX.Element{
         }
     ]);
     const [certs, setCerts]: any = React.useState([{
-        img: "http://localhost:3000/inc/img/100-100.png",
         title: "Responsive Web Design",
         company: "FreeCodeCamp",
         icon: "fa-brands fa-free-code-camp",
         link: "https://www.freecodecamp.org/certification/cjl95/responsive-web-design"
     },
     {
-        img: "http://localhost:3000/inc/img/100-100.png",
         title: "JavaScript Algorithms and Data Structures",
         company: "FreeCodeCamp",
         icon: "fa-brands fa-free-code-camp",
         link: "https://www.freecodecamp.org/certification/cjl95/javascript-algorithms-and-data-structures"
     },
     {
-        img: "http://localhost:3000/inc/img/100-100.png",
         title: "IT Fundamentals (ITF+)",
         company: "CompTIA",
         icon: "fa-solid fa-computer",

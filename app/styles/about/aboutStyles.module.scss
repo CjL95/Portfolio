@@ -28,15 +28,14 @@ $secondary-font: 'Bebas Neue', sans-serif;
     transition: all cubic-bezier(0,0,0,1) 0.5s;
 }
 .showThis{
-    height: 1300px;
-    transition: height cubic-bezier(0,0,0,1) 0.5s;
-    @media screen and (min-width: 768px){
-        height: 1000px;
-    }
+    max-height: 1300px;
+    padding: 15px;
+    transition: max-height cubic-bezier(0,0,0,1) 0.5s;
 }
 .hideThis{
-    height: 0px;
-    transition: height cubic-bezier(0,0,0,1) 0.5s;
+    max-height: 0px;
+    padding: unset;
+    transition: max-height cubic-bezier(0,0,0,1) 0.5s;
 }
 
 .expSection{

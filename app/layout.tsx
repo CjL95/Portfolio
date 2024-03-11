@@ -2,7 +2,7 @@ import React from 'react';
 import { Metadata } from 'next';
 import { Header } from './components/Header/header';
 import { Footer } from './components/Footer/footer';
-import './styles/styles.scss';
+import './styles/general_styles.scss';
 export const metadata: Metadata = {
   title: 'Chris Long',
   description: 'Musician, Gamer, and Software Engineer',
