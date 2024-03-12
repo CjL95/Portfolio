@@ -15,7 +15,7 @@ export default function Home (isVisible: any):JSX.Element{
                 <article className={`col-12 homeIntro`}>
                     <h1 className="bigTitle">Chris Long</h1>
                     <span className={styles.flavorText}>Musician, gamer, second-generation techie and <strong className={styles.softEngi}>Software Engineer.</strong></span>
-                    <p className={styles.introDesc}>All my life, I've been fascinated with technology. I admired how it could be used to turn ideas into reality, and how these ideas could come together to solve big problems. In my lifetime, I've witnessed it time and time again, and with each iteration came a brand new generation of ideas, enabling solutions to even grander problems. As I watch these ideas build the future in real time, I can't help but be just as starry-eyed as before. Now as an adult, I proudly introduce my own ideas, and passionately work towards building a brighter future.</p>
+                    <p className={styles.introDesc}>All my life, I've been fascinated with technology. I admired how it could be used to turn ideas into reality, and how these ideas could come together to solve big problems. In my lifetime, I've witnessed it time and time again, and with each iteration came a brand new generation of ideas, enabling solutions to even grander problems. Now as an engineer myself, I proudly introduce my own ideas, and passionately work towards building a brighter future.</p>
                 </article>
             </section>
             <section className={`row ${styles.homeLinks}`}>
