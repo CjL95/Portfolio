@@ -14,12 +14,11 @@ $secondary-font: 'Bebas Neue', sans-serif;
     }
     ul{
         list-style-type: none;
-        padding: 0;
+        padding: 0 15px;
     }
 }
 .allSkills, .expDesc{
     overflow: hidden;
-    padding: unset;
     &::-webkit-scrollbar{
         color: white;
         background: none;
