@@ -253,7 +253,7 @@ export default function About():JSX.Element{
                                 ALL SKILLS
                             </button>
                             <button className={`btn btn-outline-light mb-3 expandChevBtn`} type="button" onClick={allSkillsViz}>
-                                <i className={`fa-solid fa-chevron-right ${hide ? `btnRotatetrue` : `btnRotatefalse`}`}></i>
+                                <i className={`fa-solid fa-chevron-right btnRotate${hide}`}></i>
                             </button>
                         </div>
                     </figure>
