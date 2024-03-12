@@ -7,7 +7,11 @@ $secondary-font: 'Bebas Neue', sans-serif;
     min-height: 420px;
 }
 .workItemSkills {
-    height: 180px;
+    display: flex;
+    flex-direction: column;
+    span{
+        flex-basis: 180px;
+    }
     ul{
         list-style-type: none;
         padding: 0;
@@ -37,7 +41,16 @@ $secondary-font: 'Bebas Neue', sans-serif;
     padding: unset;
     transition: max-height cubic-bezier(0,0,0,1) 0.5s;
 }
-
+.btnRotatefalse{
+    display: inline-block;
+    transform: rotate(90deg);
+    transition: transform 0.2s ease-in-out;
+}
+.btnRotatetrue{
+    display: inline-block;
+    transform: unset;
+    transition: transform 0.2s ease-in-out;
+}
 .expSection{
     border-bottom: 1px solid white;
 }
