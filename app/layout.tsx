@@ -32,6 +32,10 @@ export default function RootLayout({
 
             {/*Font Awesome */}
             <script src="https://kit.fontawesome.com/1af5cf1f7d.js" crossOrigin="anonymous"></script>
+
+            {/*favicon*/}
+            <link rel="icon" href="/favicon.ico" sizes="any" />
+            
         </head>
         <body>
             <Header/>
