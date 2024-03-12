@@ -32,12 +32,12 @@ $secondary-font: 'Bebas Neue', sans-serif;
 }
 .showThis{
     max-height: 1300px;
-    padding: 15px;
+    padding: 0 15px;
     transition: max-height cubic-bezier(0,0,0,1) 0.5s;
 }
 .hideThis{
     max-height: 0px;
-    padding: unset;
+    padding: 0 15px;
     transition: max-height cubic-bezier(0,0,0,1) 0.5s;
 }
 .btnRotatefalse{
