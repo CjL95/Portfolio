@@ -34,7 +34,9 @@ export default function RootLayout({
             <script src="https://kit.fontawesome.com/1af5cf1f7d.js" crossOrigin="anonymous"></script>
 
             {/*favicon*/}
-            <link rel="icon" href="/favicon.ico" sizes="any" />
+            <link rel="shortcut icon" href="/inc/img/favicon.ico" />
+            <link rel="icon" type="image/png" sizes="32x32" href="/inc/img/favicon-32x32.png"/>
+            <link rel="icon" type="image/png" sizes="16x16" href="/inc/img/favicon-16x16.png"/>
             
         </head>
         <body>
