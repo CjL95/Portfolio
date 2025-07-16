@@ -21,6 +21,7 @@ export async function POST(req: Request, res: Response) {
     });
     if(error){
         console.log(error);
+        return NextResponse.json({ error: error.message });
     }
     return NextResponse.json({ data });
 }
