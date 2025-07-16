@@ -272,9 +272,9 @@ export default function About():JSX.Element{
                 <section className={`row my-3 ${styles.expSection}`}>
                     <h2 className="sectionTitle mb-3">Experience</h2>
                     { 
-                        exp.map((i: any, index: number) => { 
+                        exp? exp.map((i: any, index: number) => { 
                             return(<WorkItem key={index} info={i} skills={i.skills}/>);
-                        })
+                        }) : <p className="text-center">No experience found.</p>
                     }
                 </section>
                 <section className={`row ${styles.certRow}`}>
