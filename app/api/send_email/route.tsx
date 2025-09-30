@@ -4,6 +4,8 @@ import { Resend } from "resend";
 import { EmailTemplate } from "../email_template";
 import { session } from "../session";
 
+export const dynamic = 'force-dynamic';
+
 export async function POST(req: Request, res: Response) {
     const sendCount = await session().get('counter');
     const newCount = sendCount ? +sendCount + 1 : 1;
