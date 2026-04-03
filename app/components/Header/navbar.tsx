@@ -21,16 +21,6 @@ export const Navbar = (props:any):JSX.Element =>{
             path: "/projects",
             name: "Projects",
             pos: 2
-        },
-        {
-            path: "/contact",
-            name: "Contact Me",
-            pos: 3
-        },
-        {
-            path: "https://portfolio2023bucket.s3.amazonaws.com/ChrisLong_webDevResume2023.pdf",
-            name: "Resume",
-            pos: 4
         }
     ];
     let url = usePathname();
@@ -49,6 +39,11 @@ export const Navbar = (props:any):JSX.Element =>{
                             </li>
                             )
                         })}
+                        <li className={`${styles.navItem} nav-item navLink d-flex justify-content-center align-items-center`} key={23}>
+                            <a className={`nav-link text-white text-start`} href="/inc/docs/ChrisLong_webDevResume2025.pdf" download="ChrisLong_webDevResume2025.pdf" target="">
+                                Resume
+                            </a>
+                        </li>
                     </ul>
                 </div>
                 <button className={`${styles.hamb} navLink d-xl-none`} type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
