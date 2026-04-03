@@ -13,7 +13,7 @@ $secondary-font: 'Bebas Neue', sans-serif;
     text-decoration: none;
 }
 body{
-    background-image: linear-gradient(rgba(0, 0, 0, 0.30), rgba(0, 0, 0, 0.60)), url('https://portfolio2023bucket.s3.amazonaws.com/bg-mist-resize.webp');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.30), rgba(0, 0, 0, 0.60)), url('../../public/inc/img/bg-mist-resize.webp');
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
@@ -35,8 +35,27 @@ footer{
             }
        }
     }
-}   
-
+} 
+/*footer contact styles*/
+.contactLink{
+    font-size: 1.5rem;
+}
+.contactLink{
+    i{
+        font-size: 1.5rem;
+    }
+} 
+.copyIcon{
+    color: rgba(255, 255, 255, 0);
+    transition: color 0.2s ease-in-out;
+}
+.copyIconShow{
+    color: rgba(255, 255, 255, 1);
+    transition: color 0.2s ease-in-out;
+}  
+.footNavIcon{
+    padding: 10px;
+}
 section{
     /*margin: 80px auto;*/
     padding: 30px 0;
