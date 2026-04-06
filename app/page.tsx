@@ -14,8 +14,8 @@ export default function Home (isVisible: any):JSX.Element{
             <section className="row">
                 <article className={`col-12 homeIntro`}>
                     <h1 className="bigTitle">Chris Long</h1>
-                    <span className={styles.flavorText}>Musician, gamer, second-generation techie and <strong className={styles.softEngi}>Software Engineer.</strong></span>
-                    <p className={styles.introDesc}>All my life, I've been fascinated with technology. I admired how it could be used to turn ideas into reality, and how these ideas could come together to solve big problems. In my lifetime, I've witnessed it time and time again, and with each iteration came a brand new generation of ideas, enabling solutions to even grander problems. Now as an engineer myself, I proudly introduce my own ideas, and passionately work towards building a brighter future.</p>
+                    <span className={styles.flavorText}><strong className={styles.softEngi}>Software and Devops Engineer</strong></span>
+                    <p className={`d-none d-sm-block ${styles.introDesc}`}>All my life, I've been fascinated with technology. I admired how it could be used to turn ideas into reality, and how these ideas could come together to solve big problems. In my lifetime, I've witnessed it time and time again, and with each iteration came a brand new generation of ideas, enabling solutions to even grander problems. Now as an engineer myself, I proudly introduce my own ideas, and passionately work towards building a brighter future.</p>
                 </article>
             </section>
             <section className={`row ${styles.homeLinks}`}>
@@ -25,13 +25,15 @@ export default function Home (isVisible: any):JSX.Element{
                         <article className={`col-12 ${styles.ctaBox}`}>
                             <div className="row">
                                 <span className={`col-sm-12 col-md-4 ${styles.ctaLink}`}>
-                                    <a className="navLink" href="https://portfolio2023bucket.s3.amazonaws.com/ChrisLong_webDevResume2023.pdf" target="_blank">Resume</a>
-                                </span>
-                                <span className={`col-sm-12 col-md-4 ${styles.ctaLink}`}>
-                                    <a className="navLink" href="/contact">Contact Me</a>
+                                    <a className={`navLink`} href="/inc/docs/ChrisLong_webDevResume2025.pdf" download="ChrisLong_webDevResume2025.pdf" target="">
+                                        Resume
+                                    </a>
                                 </span>
                                 <span className={`col-sm-12 col-md-4 ${styles.ctaLink}`}>
                                     <a className="navLink" href="/projects">See My Work</a>
+                                </span>
+                                <span className={`col-sm-12 col-md-4 ${styles.ctaLink}`}>
+                                    <a className="navLink" href="/about">About Me</a>
                                 </span>
                             </div>
                             
