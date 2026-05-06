@@ -25,7 +25,7 @@ export default function Home (isVisible: any):JSX.Element{
                         <article className={`col-12 ${styles.ctaBox}`}>
                             <div className="row">
                                 <span className={`col-sm-12 col-md-4 ${styles.ctaLink}`}>
-                                    <a className={`navLink`} href="/inc/docs/ChrisLong_webDevResume2025.pdf" download="ChrisLong_webDevResume2025.pdf" target="">
+                                    <a className={`navLink`} href="/inc/docs/ChrisLong_webDevResume2026Q2.pdf" download="ChrisLong_webDevResume2026Q2.pdf" target="">
                                         Resume
                                     </a>
                                 </span>
