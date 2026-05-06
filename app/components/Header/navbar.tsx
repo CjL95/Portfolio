@@ -40,7 +40,7 @@ export const Navbar = (props:any):JSX.Element =>{
                             )
                         })}
                         <li className={`${styles.navItem} nav-item navLink d-flex justify-content-center align-items-center`} key={23}>
-                            <a className={`nav-link text-white text-start`} href="/inc/docs/ChrisLong_webDevResume2025.pdf" download="ChrisLong_webDevResume2025.pdf" target="">
+                            <a className={`nav-link text-white text-start`} href="/inc/docs/ChrisLong_webDevResume2026Q2.pdf" download="ChrisLong_webDevResume2026Q2.pdf" target="">
                                 Resume
                             </a>
                         </li>
